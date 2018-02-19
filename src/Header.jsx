@@ -10,10 +10,12 @@ class Header extends React.Component{
 
         return(
            <div>
-            <Navbar inverse collapseOnSelect>
+            <Navbar  inverse collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-      <a href="#app">RestApi task</a>
+      <Link to='/'>
+           Home
+      </Link>
     </Navbar.Brand>
     <Navbar.Toggle />
   </Navbar.Header>

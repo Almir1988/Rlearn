@@ -1,17 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from './src/App.jsx';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import User from './src/User.jsx';
 import Product from './src/Product.jsx';
-
+import Header from './src/Header.jsx';
+import Footer from './src/Footer.jsx';
+import Content from './src/Content.jsx'  
+import PostUser from './src/PostUser.jsx'
+import PostProduct from './src/PostProduct.jsx'
 ReactDOM.render(<BrowserRouter> 
     <div>
+
+      <Header/>
       <Switch>
         <Route path='/User' component={User}/>
         <Route path='/Product' component={Product}/>
-        <Route path='/' component={App}/>
+        <Route path='/User/PostUser' component={PostUser}/>
+        <Route path='/User/PostProduct' component={PostProduct}/>
+        <Route path='/' component={Content}/>
       </Switch>
+      <Footer/>
     </div>
   </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

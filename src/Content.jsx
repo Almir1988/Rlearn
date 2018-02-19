@@ -12,10 +12,10 @@ class Content extends React.Component{
 		return(
 			<div>
 				<Jumbotron>
-					<h1>Rest Api task</h1>
-					<p>
+					
+					<center><p>
   This is a content
-					</p>
+					</p></center>
 				
 				</Jumbotron>
 			</div>
