@@ -13,10 +13,11 @@ ReactDOM.render(<BrowserRouter>
 
       <Header/>
       <Switch>
+        
         <Route path='/User' component={User}/>
         <Route path='/Product' component={Product}/>
-        <Route path='/User/PostUser' component={PostUser}/>
-        <Route path='/User/PostProduct' component={PostProduct}/>
+        <Route path='/PostUser' component={PostUser}/>
+        <Route path='/PostProduct' component={PostProduct}/>
         <Route path='/' component={Content}/>
       </Switch>
       <Footer/>

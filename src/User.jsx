@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from './Header.jsx'
-import {Link } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 class User extends React.Component{
         
@@ -10,8 +10,12 @@ class User extends React.Component{
             return(
               <div className="container">
             
-            <Link to='/User/PostUser'>
+            <Link to='/PostUser'>
                        Add User
+             </Link>
+             <br/>
+             <Link to='/GetAllUsers3'>
+                       Get All Users
              </Link>
 
                  </div>

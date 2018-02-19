@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PostProduct from './PostProduct.jsx'
-import {Nav, NavItem,Link } from 'react-bootstrap';
+import {Nav, NavItem} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 class Product extends React.Component{
         
           render()
@@ -9,8 +10,12 @@ class Product extends React.Component{
 
             return(
                 <div className="container" >
-              <Link to='/Product/PostProduct'>
+              <Link to='/PostProduct'>
                        Add Porduct
+             </Link>
+             <br/>
+             <Link to='/Product/PostProduct'>
+                       Get All Products
              </Link>
                  </div>
             );
