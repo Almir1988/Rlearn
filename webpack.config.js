@@ -10,7 +10,7 @@ var config = {
     },
     
     module: {
-       loaders: [
+       loaders: [ test
           {
              test: /\.jsx?$/,
              exclude: /node_modules/,
