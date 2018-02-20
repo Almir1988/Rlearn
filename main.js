@@ -28,9 +28,10 @@ ReactDOM.render(<BrowserRouter>
         <Route path='/PostProduct' component={PostProduct}/>
         <Route path='/Products/ListOfAllProducts' component={ListOfAllProducts}/>
 
-        <Route path='/' component={Slider}/>
+        <Route path='/' component={Content}/>
        
       </Switch>
+      
       <Footer/>
       
     </div>

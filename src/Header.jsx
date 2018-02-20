@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
 import {Nav,Navbar,NavDropdown,NavItem,MenuItem} from 'react-bootstrap';
-
+import Slider from './slider.jsx'
 class Header extends React.Component{
 
        render()
@@ -10,18 +10,18 @@ class Header extends React.Component{
 
         return(
            <div>
-            <Navbar  inverse collapseOnSelect>
+            <Navbar  className="float-right"  inverse collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-      <Link to='/'>
+      <Link  to='/'>
            Home
       </Link>
     </Navbar.Brand>
     <Navbar.Toggle />
   </Navbar.Header>
-  <Navbar.Collapse>
+  <Navbar.Collapse >
     <Nav>
-      <NavItem eventKey={1} >
+      <NavItem eventKey={1}  >
       <Link to='/User'>
       Users
               </Link>
@@ -36,7 +36,7 @@ class Header extends React.Component{
     
   </Navbar.Collapse>
 </Navbar>
-
+    <Slider/>
           </div>
           
         );
