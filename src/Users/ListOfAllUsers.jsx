@@ -29,12 +29,23 @@ class Listofallusers extends React.Component {
     render()
     {
          return (
+             <div className="container">
             <Table striped bordered condensed hover>
+
+            <thead>
+                 <tr>
+                     <td><b>First Name</b></td>
+                     <td><b>Last Name</b></td>
+                     <td><b>Email</b></td>
+                     <td><b>Password</b></td>
+                 </tr>  
+            </thead>
             <tbody>
                {this.state.data.map((person, i) => <TableRow key = {i} 
                   data = {person}/>)}
             </tbody>
-            </Table>          
+            </Table>
+            </div>          
          );
 }
 }

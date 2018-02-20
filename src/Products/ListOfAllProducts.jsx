@@ -11,15 +11,15 @@ class Listofallproducts extends React.Component {
 
             data:[
                 {
-            ProductName:'',
-            Quantity:'',
+                    ProductName:'',
+                    Quantity:''
            
                 }
             ]
          }
      }
      componentDidMount(){
-            axios.get(`http://localhost:3000/Products`).then(res => {
+            axios.get(`http://localhost:3000/Product`).then(res => {
                
                this.setState({data: res.data})
         
@@ -28,12 +28,21 @@ class Listofallproducts extends React.Component {
     render()
     {
          return (
+             <div className="container">
             <Table striped bordered condensed hover>
+
+            <thead>
+                 <tr>
+                     <td><b>Product Name</b></td>
+                     <td><b>Quantity</b></td>
+                 </tr>  
+            </thead>
             <tbody>
                {this.state.data.map((product, i) => <TableRow key = {i} 
                   data = {product}/>)}
             </tbody>
-            </Table>          
+            </Table>
+            </div>          
          );
 }
 }
