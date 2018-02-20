@@ -14,7 +14,7 @@ class Product extends React.Component{
                        Add Porduct
              </Link>
              <br/>
-             <Link to='/Product/PostProduct'>
+             <Link to='/Product/'>
                        Get All Products
              </Link>
                  </div>

@@ -14,7 +14,7 @@ class User extends React.Component{
                        Add User
              </Link>
              <br/>
-             <Link to='/GetAllUsers3'>
+             <Link to='/Users/ListOfAllUsers'>
                        Get All Users
              </Link>
 
