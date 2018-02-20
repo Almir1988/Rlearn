@@ -19,39 +19,25 @@ class Listofallusers extends React.Component {
             ]
          }
      }
-
-     GetAllUsers() { 
-     
-     axios.get(`http://localhost:3000/User`).then(res => {
-        debugger;
-            this.FirstName=res.data.FirstName;
-            this.LastName=res.data.LastName;
-            this.Email=res.data.Email;
-            this.Password=res.data.Password;
-
-     });
-
-
+     componentDidMount(){
+            axios.get(`http://localhost:3000/User`).then(res => {
+               
+               this.setState({data: res.data})
+        
+            });
     }
-
     render()
     {
-
-
          return (
-             
             <Table striped bordered condensed hover>
             <tbody>
                {this.state.data.map((person, i) => <TableRow key = {i} 
-                  data = {person} />)}
+                  data = {person}/>)}
             </tbody>
-            </Table>
-           
+            </Table>          
          );
-
 }
 }
-
 class TableRow extends React.Component {
     render() {
        return (

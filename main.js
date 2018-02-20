@@ -9,7 +9,7 @@ import Content from './src/Content.jsx'
 import PostUser from './src/PostUser.jsx'
 import PostProduct from './src/PostProduct.jsx'
 import ListOfAllUsers from './src/Users/ListOfAllUsers.jsx'
-
+import ListOfAllProducts from './src/Product/ListOfAllProducts.jsx'
 
 
 ReactDOM.render(<BrowserRouter> 
@@ -22,12 +22,9 @@ ReactDOM.render(<BrowserRouter>
         <Route path='/Users/ListOfAllUsers' component={ListOfAllUsers}/>
         <Route path='/PostUser' component={PostUser}/>
 
-
-
-
-
         <Route path='/Product' component={Product}/>
         <Route path='/PostProduct' component={PostProduct}/>
+        <Route path='/Product/ListOfAllProducts' component={ListOfAllProducts}/>
         <Route path='/' component={Content}/>
       </Switch>
       <Footer/>

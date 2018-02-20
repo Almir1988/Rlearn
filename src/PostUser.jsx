@@ -14,7 +14,7 @@ class PostUser extends React.Component {
             Password:''
           };
         }
-        AddProduct() { 
+        AddUser() { 
         const body ={
           FirstName:this.state.FirstName,
           LastName:this.state.LastName,
@@ -72,7 +72,7 @@ class PostUser extends React.Component {
   </FormGroup>
   <FormGroup>
     <Col smOffset={2} xs={10}>
-      <Button onClick={this.AddProduct.bind(this)}>Post</Button>
+      <Button onClick={this.AddUser.bind(this)}>Post</Button>
     </Col>
   </FormGroup>
 
