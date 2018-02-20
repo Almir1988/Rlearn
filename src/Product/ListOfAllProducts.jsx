@@ -3,7 +3,7 @@ import Header from '../Header.jsx';
 import axios from 'axios';
 import {Table} from 'react-bootstrap';
 
-class Listofallusers extends React.Component {
+class Listofallproducts extends React.Component {
     
     constructor(props) {
         super(props);
@@ -52,4 +52,4 @@ class TableRow extends React.Component {
  }
 
 
- export default Listofallusers;
+ export default Listofallproducts;

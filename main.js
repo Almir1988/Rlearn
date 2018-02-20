@@ -22,6 +22,7 @@ ReactDOM.render(<BrowserRouter>
         <Route path='/Users/ListOfAllUsers' component={ListOfAllUsers}/>
         <Route path='/PostUser' component={PostUser}/>
 
+
         <Route path='/Product' component={Product}/>
         <Route path='/PostProduct' component={PostProduct}/>
         <Route path='/Product/ListOfAllProducts' component={ListOfAllProducts}/>

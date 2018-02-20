@@ -17,6 +17,7 @@ class Product extends React.Component{
              <Link to='/Product/ListOfAllProducts'>
                        Get All Products
              </Link>
+            
                  </div>
             );
           }
