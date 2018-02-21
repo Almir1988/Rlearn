@@ -8,13 +8,16 @@ class Footer extends React.Component{
 
 
          return(
-    <footer>
-      <Grid>
-        <div className="text-center small copyright">
-          © RT 2018
-        </div>
-      </Grid>
-    </footer>
+   
+          <footer>
+          <Grid>
+            <div className="text-center small copyright">
+              © RT 2018
+            </div>
+          </Grid>
+        </footer>
+
+
   );
 }
 }   

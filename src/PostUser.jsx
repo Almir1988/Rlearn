@@ -1,7 +1,10 @@
 import React from 'react';
-import {Form,FormGroup,Button,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
+import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
 import Header from './Header.jsx';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+
+
 class PostUser extends React.Component {  
         constructor(props)
         {
@@ -36,7 +39,17 @@ class PostUser extends React.Component {
          {
              return(
                 
-                <Form className="container" horizontal>
+              <div className="container">
+
+
+
+           <Jumbotron>  
+             <li><Link to='/User'>RETURN TO USERS</Link></li>
+           </Jumbotron>
+
+
+
+                <Form horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
     FirstName
@@ -75,9 +88,10 @@ class PostUser extends React.Component {
       <Button onClick={this.AddUser.bind(this)}>Post</Button>
     </Col>
   </FormGroup>
-
+ 
   
 </Form>
+              </div>
 
              );
 

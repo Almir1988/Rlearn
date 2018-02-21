@@ -1,9 +1,8 @@
 import React from 'react';
-import {Form,FormGroup,Button,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass} from 'react-bootstrap';
+import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass} from 'react-bootstrap';
 import Header from './Header.jsx';
 import axios from 'axios';
-
-
+import {Link} from 'react-router-dom';
 
 class PostProducts extends React.Component {
 
@@ -46,8 +45,19 @@ class PostProducts extends React.Component {
          {
 
              return(
-                
-                <Form  className="container" horizontal>
+               
+              <div className="container">
+
+
+
+              <Jumbotron>  
+                <li><Link to='/Product'>RETURN TO PRODUCTS</Link></li>
+              </Jumbotron>
+   
+   
+
+
+                <Form   horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} xs={2}>
     ProductName
@@ -70,6 +80,8 @@ class PostProducts extends React.Component {
     </Col>
   </FormGroup>
 </Form>
+
+</div>
              );
 
          }

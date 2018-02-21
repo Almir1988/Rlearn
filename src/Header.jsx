@@ -9,34 +9,40 @@ class Header extends React.Component{
        {
 
         return(
-           <div>
-            <Navbar  className="float-right"  inverse collapseOnSelect>
+           <div class="container">
+             <Navbar inverse collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-      <Link  to='/'>
-           Home
+
+      <Link to="/">
+       Home
       </Link>
+      
     </Navbar.Brand>
     <Navbar.Toggle />
   </Navbar.Header>
-  <Navbar.Collapse >
+  <Navbar.Collapse>
     <Nav>
-      <NavItem eventKey={1}  >
-      <Link to='/User'>
-      Users
-              </Link>
-      </NavItem>
-      <NavItem eventKey={2} >
-      <Link to='/Product'>
-             Products
-              </Link>
-      </NavItem>
-      
     </Nav>
-    
+    <Nav pullRight>
+      <NavItem eventKey={1} href="#">
+        Link
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        Link
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        Link 
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        Link 
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        Link 
+      </NavItem>
+    </Nav>
   </Navbar.Collapse>
 </Navbar>
-    <Slider/>
           </div>
           
         );

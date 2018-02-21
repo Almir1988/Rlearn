@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from '../Header.jsx';
 import axios from 'axios';
-import {Table} from 'react-bootstrap';
-
+import {Table,Button,Jumbotron} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 class Listofallusers extends React.Component {
     
     constructor(props) {
@@ -11,6 +11,7 @@ class Listofallusers extends React.Component {
 
             data:[
                 {
+            _id:'',
             FirstName:'',
             LastName:'',
             Email:'',
@@ -29,15 +30,26 @@ class Listofallusers extends React.Component {
     render()
     {
          return (
+        
+            
              <div className="container">
+
+             
+             <Jumbotron>  
+             <li><Link to='/User'>RETURN TO USERS</Link></li>
+           </Jumbotron>
+
             <Table striped bordered condensed hover>
 
             <thead>
                  <tr>
+                     <td><b>Id</b></td>
                      <td><b>First Name</b></td>
                      <td><b>Last Name</b></td>
                      <td><b>Email</b></td>
                      <td><b>Password</b></td>
+                     <td><b>Delete</b></td>
+                     <td><b>Edit</b></td>
                  </tr>  
             </thead>
             <tbody>
@@ -45,6 +57,8 @@ class Listofallusers extends React.Component {
                   data = {person}/>)}
             </tbody>
             </Table>
+
+             
             </div>          
          );
 }
@@ -54,15 +68,17 @@ class TableRow extends React.Component {
        return (
         
           <tr>
+             <td>{this.props.data._id}</td> 
              <td>{this.props.data.FirstName}</td>
              <td>{this.props.data.LastName}</td>
              <td>{this.props.data.Email}</td>
              <td>{this.props.data.Password}</td>
+             <td><Button bsStyle="danger">Delete</Button></td>
+             <td><Button bsStyle="success">Edit</Button></td>
           </tr>
           
        );
     }
  }
-
 
  export default Listofallusers;
