@@ -2,8 +2,7 @@ import React from 'react';
 import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
 import Header from './Header.jsx';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-
+import { Link, withRouter } from "react-router-dom";
 
 class PostUser extends React.Component {  
         constructor(props)
@@ -18,7 +17,19 @@ class PostUser extends React.Component {
           };
 
         }
+
+
+        Transfer () {
+       
+        
+      
+          this.props.history.push("/");
+        }
+
+
         AddUser() { 
+
+          const tr=this.Transfer();
         const body ={
           FirstName:this.state.FirstName,
           LastName:this.state.LastName,
@@ -31,7 +42,8 @@ class PostUser extends React.Component {
           FirstName:'',
           LastName:'',
           Email:'',
-          Password:''
+          Password:'',
+          tr
         }))
         .catch(err => {
           debugger;
@@ -92,7 +104,8 @@ class PostUser extends React.Component {
   </FormGroup>
   <FormGroup>
     <Col smOffset={2} xs={10}>
-      <Button onClick={this.AddUser.bind(this)}>Post</Button>
+    <input type="submit" value="Submit"  onClick={this.AddUser.bind(this)} />
+   
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
@@ -106,7 +119,7 @@ class PostUser extends React.Component {
          }
 }
 
-export default PostUser;
+export default withRouter(PostUser);
 
 
 

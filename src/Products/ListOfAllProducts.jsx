@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header.jsx';
 import axios from 'axios';
-import {Table,Button,Jumbotron} from 'react-bootstrap';
+import {Table,Button,Jumbotron,Modal} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 class Listofallproducts extends React.Component {
     

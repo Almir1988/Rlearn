@@ -8,7 +8,7 @@ class Footer extends React.Component{
 
 
          return(
-   
+
           <footer>
           <Grid>
             <div className="text-center small copyright">
@@ -16,8 +16,7 @@ class Footer extends React.Component{
             </div>
           </Grid>
         </footer>
-
-
+            
   );
 }
 }   

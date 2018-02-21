@@ -2,7 +2,8 @@ import React from 'react';
 import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
 import Header from './Header.jsx';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link, withRouter } from "react-router-dom";
+
 
 class PostProducts extends React.Component {
 
@@ -20,8 +21,18 @@ class PostProducts extends React.Component {
       }
       
 
+
+
+      Transfer () {
+       
+        
+      
+        this.props.history.push("/");
+      }
+
       AddProduct()
       { 
+        const tr=this.Transfer();
         const body ={
 
           ProductName:this.state.ProductName,
@@ -33,7 +44,9 @@ class PostProducts extends React.Component {
       .then(res =>this.setState({
         msg:'Product added successfully',
         ProductName:'',
-          Quantity:''
+        Quantity:'',
+        tr
+          
       }))
       .catch(err=>{
 
@@ -79,7 +92,8 @@ class PostProducts extends React.Component {
   </FormGroup>
   <FormGroup>
     <Col smOffset={2} xs={10}>
-    <Button onClick={this.AddProduct.bind(this)}>Post</Button>
+    <input type="submit" value="Submit"  onClick={this.AddProduct.bind(this)} />
+    
     {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
@@ -91,7 +105,7 @@ class PostProducts extends React.Component {
          }
 }
 
-export default PostProducts;
+export default withRouter(PostProducts);
 
 
 
