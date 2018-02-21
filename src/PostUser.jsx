@@ -16,6 +16,7 @@ class PostUser extends React.Component {
             Email:'',
             Password:''
           };
+
         }
         AddUser() { 
         const body ={
@@ -35,6 +36,8 @@ class PostUser extends React.Component {
       handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
       }
+
+      
          render()
          {
              return(

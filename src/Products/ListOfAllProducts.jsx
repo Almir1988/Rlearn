@@ -20,34 +20,24 @@ class Listofallproducts extends React.Component {
          }
      }
      componentDidMount(){
-            axios.get(`http://localhost:3000/Product`).then(res => {
-               
-               this.setState({data: res.data})
-        
-            });
-
-
-            
-        
+         this.load();
     }
+    load() {
+        axios.get(`http://localhost:3000/Product`).then(res => {
+               this.setState({data: res.data})
+            });
+    }
+    deleteProduct(id) {    
+        axios.delete('http://localhost:3000/Product/'+id).then(this.componentDidMount)
+     }
+    
     render()
     {
          return (
-
-            
-            
-           
-
-
              <div className="container">
-
-
            <Jumbotron>  
              <li><Link to='/Product'>RETURN TO PRODUCTS</Link></li>
            </Jumbotron>
-
-
-
             <Table striped bordered condensed hover>
 
             <thead>
@@ -61,7 +51,7 @@ class Listofallproducts extends React.Component {
             </thead>
             <tbody>
                {this.state.data.map((product, i) => <TableRow key = {i} 
-                  data = {product}/>)}
+                  data = {product} deleteProduct={(id) => this.deleteProduct(id)}/>)}
             </tbody>
             </Table>
             </div>          
@@ -76,7 +66,7 @@ class TableRow extends React.Component {
              <td>{this.props.data._id}</td>
              <td>{this.props.data.ProductName}</td>
              <td>{this.props.data.Quantity}</td>
-             <td><Button bsStyle="danger" onClick={this.DeleteItem}>Delete</Button></td>
+             <td><Button bsStyle="danger" onClick={() => this.props.deleteProduct(this.props.data._id)}>Delete</Button></td>
              <td><Button bsStyle="success">Edit</Button></td>
              
           </tr>

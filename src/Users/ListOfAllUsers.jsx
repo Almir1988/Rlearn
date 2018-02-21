@@ -21,12 +21,20 @@ class Listofallusers extends React.Component {
          }
      }
      componentDidMount(){
-            axios.get(`http://localhost:3000/User`).then(res => {
-               
+           this.load();
+    }
+    load()
+    {
+        axios.get(`http://localhost:3000/User`).then(res => {
                this.setState({data: res.data})
-        
             });
     }
+     deleteUser(id)
+     {
+
+        axios.delete('http://localhost:3000/User/'+id).then(this.load())
+     }
+
     render()
     {
          return (
@@ -54,7 +62,7 @@ class Listofallusers extends React.Component {
             </thead>
             <tbody>
                {this.state.data.map((person, i) => <TableRow key = {i} 
-                  data = {person}/>)}
+                  data = {person} deleteUser={(id) => this.deleteUser(id)}/>)}
             </tbody>
             </Table>
 
@@ -73,7 +81,7 @@ class TableRow extends React.Component {
              <td>{this.props.data.LastName}</td>
              <td>{this.props.data.Email}</td>
              <td>{this.props.data.Password}</td>
-             <td><Button bsStyle="danger">Delete</Button></td>
+             <td><Button bsStyle="danger" onClick={() => this.props.deleteUser(this.props.data._id)}>Delete</Button></td>
              <td><Button bsStyle="success">Edit</Button></td>
           </tr>
           
