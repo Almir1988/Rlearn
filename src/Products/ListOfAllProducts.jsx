@@ -28,7 +28,7 @@ class Listofallproducts extends React.Component {
             });
     }
     deleteProduct(id) {    
-        axios.delete('http://localhost:3000/Product/'+id).then(this.componentDidMount)
+        axios.delete('http://localhost:3000/Product/'+id).then(()=>this.load())
      }
     
     render()

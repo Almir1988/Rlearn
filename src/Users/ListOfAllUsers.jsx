@@ -32,7 +32,7 @@ class Listofallusers extends React.Component {
      deleteUser(id)
      {
 
-        axios.delete('http://localhost:3000/User/'+id).then(this.load())
+        axios.delete('http://localhost:3000/User/'+id).then(()=>this.load())
      }
 
     render()

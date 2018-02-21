@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass} from 'react-bootstrap';
+import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
 import Header from './Header.jsx';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
@@ -27,11 +27,14 @@ class PostProducts extends React.Component {
           ProductName:this.state.ProductName,
           Quantity:this.state.Quantity
       };
-      axios.post(`http://localhost:3000/Product`,body)
-      .then(res=>{
 
-        debugger;
-      })
+      
+      axios.post(`http://localhost:3000/Product`,body)
+      .then(res =>this.setState({
+        msg:'Product added successfully',
+        ProductName:'',
+          Quantity:''
+      }))
       .catch(err=>{
 
         debugger;
@@ -77,6 +80,7 @@ class PostProducts extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
     <Button onClick={this.AddProduct.bind(this)}>Post</Button>
+    {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
 </Form>

@@ -26,9 +26,13 @@ class PostUser extends React.Component {
           Password:this.state.Password
         };
         axios.post(`http://localhost:3000/User`, body)
-        .then(res => {
-          debugger;
-        })
+        .then(res =>this.setState({
+          msg:'User added successfully',
+          FirstName:'',
+          LastName:'',
+          Email:'',
+          Password:''
+        }))
         .catch(err => {
           debugger;
         });
@@ -89,6 +93,7 @@ class PostUser extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
       <Button onClick={this.AddUser.bind(this)}>Post</Button>
+      {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
  
