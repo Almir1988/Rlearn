@@ -14,7 +14,7 @@ class Header extends React.Component{
   <Navbar.Header>
     <Navbar.Brand>
       <Link to="/">
-       HOME
+       LOGO
       </Link>
     </Navbar.Brand>
     <Navbar.Toggle />
@@ -25,9 +25,29 @@ class Header extends React.Component{
     <Nav pullRight>
       <NavItem >
       <Link  className="login" to="/Login">
-       Login  
+       
       </Link>
       </NavItem>
+      <Nav pullRight>
+      <NavItem eventKey={1} href="#">
+        Home
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        About
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        Products
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        Contact
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        <Link  class="login"to="/Login">  
+          LOGIN
+        </Link>
+      </NavItem>
+    </Nav>
+     
     </Nav>
   </Navbar.Collapse>
 </Navbar>
