@@ -20,7 +20,7 @@ ReactDOM.render(<BrowserRouter>
       <Switch>
          
 
-        <Route path='/Login' component={LoginAdmin}/>
+        <Route path='/LoginUser' component={LoginAdmin}/>
         <Route path='/Admincontrols' component={AdminControls}/>
         
         <Route path='/User' component={User}/>
