@@ -2,22 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
 import {Nav,Navbar,NavDropdown,NavItem,MenuItem} from 'react-bootstrap';
-import Slider from './slider.jsx'
-class Header extends React.Component{
+import './Header.css';
 
+
+class Header extends React.Component{
        render()
        {
-
         return(
-           <div className="container">
+           <div className="position">
              <Navbar inverse collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-
       <Link to="/">
-       Home
+       HOME
       </Link>
-      
     </Navbar.Brand>
     <Navbar.Toggle />
   </Navbar.Header>
@@ -25,9 +23,9 @@ class Header extends React.Component{
     <Nav>
     </Nav>
     <Nav pullRight>
-      <NavItem eventKey={1} >
-      <Link to="/LoginUser">
-       Login
+      <NavItem >
+      <Link  className="login" to="/Login">
+       LOGIN  
       </Link>
       </NavItem>
     </Nav>

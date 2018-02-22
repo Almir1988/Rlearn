@@ -22,7 +22,14 @@ var config = {
             {
               test: /\.(ttf|eot|svg|png|gif|jpg|pdf|pcbdoc|zip)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
               loader: "file-loader?name=[name].[ext]"
+            },
+
+
+            {
+                test: /\.css$/,
+                loaders: ["style-loader","css-loader"]
             }
+            
          ]
     }
  }

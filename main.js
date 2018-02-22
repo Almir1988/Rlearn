@@ -10,7 +10,6 @@ import PostUser from './src/PostUser.jsx'
 import PostProduct from './src/PostProduct.jsx'
 import ListOfAllUsers from './src/Users/ListOfAllUsers.jsx'
 import ListOfAllProducts from './src/Products/ListOfAllProducts.jsx'
-import Slider from './src/slider.jsx'
 import LoginAdmin from './src/LoginUser.jsx'
 import AdminControls from './src/AdminControls.jsx'
 ReactDOM.render(<BrowserRouter> 
@@ -20,7 +19,7 @@ ReactDOM.render(<BrowserRouter>
       <Switch>
          
 
-        <Route path='/LoginUser' component={LoginAdmin}/>
+        <Route path='/Login' component={LoginAdmin}/>
         <Route path='/Admincontrols' component={AdminControls}/>
         
         <Route path='/User' component={User}/>
@@ -31,13 +30,9 @@ ReactDOM.render(<BrowserRouter>
         <Route path='/Product' component={Product}/>
         <Route path='/PostProduct' component={PostProduct}/>
         <Route path='/Products/ListOfAllProducts' component={ListOfAllProducts}/>
-
+        
         <Route path='/' component={Content}/>
-       
       </Switch>
-      
-      <Footer/>
-      
     </div>
   </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

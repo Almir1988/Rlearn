@@ -1,15 +1,12 @@
 import React from 'react';
-import Header from './Header.jsx';
-import {FormGroup,Col,Form,FormControl,Button,ControlLabel} from 'react-bootstrap';
 import {Link,withRouter} from "react-router-dom";
+import {FormGroup,Col,Form,FormControl,Button,ControlLabel} from 'react-bootstrap';
+import './LoginUser.css';
 
-
-class Login extends React.Component {
+class LoginUser extends React.Component {
 
     constructor(props)
     {
-
-  
          super(props);
          this.state={
            
@@ -20,7 +17,7 @@ class Login extends React.Component {
     }
 
 
-    Transfer () {s
+    Transfer () {
 
         this.props.history.push("/AdminControls");
       }
@@ -55,11 +52,10 @@ class Login extends React.Component {
    render() {
       return (
          <div className="container">
-
            <Form  className="FormPos"horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} sm={2}>
-      Email
+      
     </Col>
     <Col sm={10}>
       <FormControl type="text" name="username" placeholder="username"  value={this.state.username} onChange={this.handleChange.bind(this)} />
@@ -67,7 +63,6 @@ class Login extends React.Component {
   </FormGroup>
   <FormGroup controlId="formHorizontalPassword">
     <Col componentClass={ControlLabel} sm={2}>
-      Password
     </Col>
     <Col sm={10}>
       <FormControl type="password" name="password" placeholder="Password" value={this.state.password}  onChange={this.handleChange.bind(this)} />
@@ -75,11 +70,7 @@ class Login extends React.Component {
   </FormGroup>
   <FormGroup>
     <Col smOffset={2} sm={10}>
-
-      <input type="submit" value="Submit"  onClick={this.validate} />
-    
-      
-      
+      <Button type="submit" bsStyle="info" onClick={this.validate}>Submit</Button>
     </Col>
   </FormGroup>
 </Form>
@@ -88,4 +79,4 @@ class Login extends React.Component {
       );
    }
 }
-export default withRouter(Login);
+export default withRouter(LoginUser);

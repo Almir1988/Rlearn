@@ -71,7 +71,7 @@ class PostUser extends React.Component {
                 <Form horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
-    FirstName
+   
     </Col>
     <Col xs={10}>
       <FormControl type="text" name="FirstName" placeholder="FirstName" value={this.state.FirstName} onChange={this.handleChange.bind(this)}/>
@@ -79,7 +79,7 @@ class PostUser extends React.Component {
   </FormGroup>
   <FormGroup controlId="LastName">
     <Col componentClass={ControlLabel} xs={2}>
-    LastName
+   
     </Col>
     <Col xs={10}>
       <FormControl type="text" name="LastName" placeholder="LastName"value={this.state.LastName} onChange={this.handleChange.bind(this)}/>
@@ -87,7 +87,7 @@ class PostUser extends React.Component {
   </FormGroup>
   <FormGroup controlId="Email" >
     <Col componentClass={ControlLabel} xs={2}>
-    Email
+    
     </Col>
     <Col xs={10}>
       <FormControl type="email"  name="Email" placeholder="Email" value={this.state.Email} onChange={this.handleChange.bind(this)} />
@@ -96,7 +96,7 @@ class PostUser extends React.Component {
 
      <FormGroup controlId="Password">
     <Col componentClass={ControlLabel} xs={2}>
-    Password
+   
     </Col>
     <Col xs={10}>
       <FormControl type="password" name="Password" placeholder="Password" value={this.state.Password} onChange={this.handleChange.bind(this)} />
@@ -104,8 +104,8 @@ class PostUser extends React.Component {
   </FormGroup>
   <FormGroup>
     <Col smOffset={2} xs={10}>
-    <input type="submit" value="Submit"  onClick={this.AddUser.bind(this)} />
    
+    <Button type="submit" bsStyle="info" onClick={this.AddUser.bind(this)} >Add User</Button>
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>

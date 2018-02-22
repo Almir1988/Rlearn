@@ -76,7 +76,7 @@ class PostProducts extends React.Component {
                 <Form   horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} xs={2}>
-    ProductName
+   
     </Col>
     <Col xs={10}>
       <FormControl type="text" name="ProductName" placeholder="ProductName" value={this.state.ProductName} onChange={this.handleChange.bind(this)} />
@@ -84,7 +84,7 @@ class PostProducts extends React.Component {
   </FormGroup>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} xs={2}>
-    Quantity
+    
     </Col>
     <Col xs={10}>
       <FormControl type="text" name="Quantity" placeholder="Quantity"  value={this.state.Quantity} onChange={this.handleChange.bind(this)}/>
@@ -92,8 +92,8 @@ class PostProducts extends React.Component {
   </FormGroup>
   <FormGroup>
     <Col smOffset={2} xs={10}>
-    <input type="submit" value="Submit"  onClick={this.AddProduct.bind(this)} />
     
+    <Button type="submit" bsStyle="info" onClick={this.AddProduct.bind(this)}>Add Product</Button>
     {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>

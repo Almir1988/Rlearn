@@ -11,6 +11,10 @@ class Product extends React.Component{
             return(
                 
                 <div className="container">
+  <Jumbotron>  
+             <li><Link to='/AdminControls'>RETURN TO PANEL</Link></li>
+           </Jumbotron>
+                
  <Jumbotron>  
   <h2>PRODUCTS</h2>
   <li><Link to='/PostProduct'>ADD PRODUCTS</Link></li>

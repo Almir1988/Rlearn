@@ -5,9 +5,8 @@ import {Button,Row,Col,Jumbotron,Grid,Thumbnail} from "react-bootstrap";
 import Imone  from './images/imone.png'
 import Imtwo from './images/imtwo.png'
 import Imtree from './images/imtree.png'
-import Slider from './slider.jsx'
 import {Link} from 'react-router-dom';
-
+import './Style.css'
 class Admincontrols extends React.Component{
 
 	render()
@@ -18,7 +17,7 @@ class Admincontrols extends React.Component{
 		return(
 			<div className="container">
     <Jumbotron>  
-  <h2>HOME</h2>
+  <h2>ADMIN PANEL</h2>
   <li><Link to='/User'>USERS</Link></li>
   <li><Link to='/Product'>PRODUCTS</Link></li>
 </Jumbotron>

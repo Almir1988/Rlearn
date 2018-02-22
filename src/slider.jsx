@@ -4,13 +4,14 @@ import {Carousel,} from 'react-bootstrap';
 import ImageOne from './images/imageone.jpg'
 import ImageTwo from './images/imagetwo.jpg'
 import ImageTree from './images/imagetree.jpg'
+import Content from './Content.jsx'
 class Slider extends  React.Component
 {
 
         render()
         {
             return(
-<div >
+<div className="container">
                 <Carousel>
   <Carousel.Item>
     <img width={2000} height={900} alt="900x500" src={ImageOne} />
@@ -33,7 +34,9 @@ class Slider extends  React.Component
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-</Carousel>
+</Carousel> 
+
+<Content/>
 
 </div>
             );
