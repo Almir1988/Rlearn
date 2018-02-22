@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import './src/Style.css'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import User from './src/User.jsx';
 import Product from './src/Product.jsx';

@@ -10,7 +10,7 @@ class Header extends React.Component{
        {
         return(
            <div className="position">
-             <Navbar inverse collapseOnSelect>
+             <Navbar >
   <Navbar.Header>
     <Navbar.Brand>
       <Link to="/">
