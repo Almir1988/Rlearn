@@ -11,14 +11,18 @@ import PostProduct from './src/PostProduct.jsx'
 import ListOfAllUsers from './src/Users/ListOfAllUsers.jsx'
 import ListOfAllProducts from './src/Products/ListOfAllProducts.jsx'
 import Slider from './src/slider.jsx'
-
+import LoginAdmin from './src/LoginUser.jsx'
 
 ReactDOM.render(<BrowserRouter> 
     <div>
 
       <Header/>
       <Switch>
+         
 
+        <Route path='/Login' component={LoginAdmin}/>
+
+        
         <Route path='/User' component={User}/>
         <Route path='/PostUser' component={PostUser}/>
         <Route path='/Users/ListOfAllUsers' component={ListOfAllUsers}/>
