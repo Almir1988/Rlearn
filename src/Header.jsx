@@ -25,7 +25,7 @@ class Header extends React.Component{
     <Nav>
     </Nav>
     <Nav pullRight>
-      <NavItem eventKey={1} href="#">
+      <NavItem eventKey={1} >
       <Link to="/Login">
        Login
       </Link>

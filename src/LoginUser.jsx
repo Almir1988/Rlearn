@@ -8,6 +8,8 @@ class Login extends React.Component {
 
     constructor(props)
     {
+
+  
          super(props);
          this.state={
            
@@ -18,14 +20,14 @@ class Login extends React.Component {
     }
 
 
-    Transfer () {
-        this.props.history.push("/");
+    Transfer () {s
+
+        this.props.history.push("/AdminControls");
       }
- 
+    
    validate()
    { 
     var tr=this.Transfer();
-    var tr2=this.Transfer2();
      var val={
        username:this.state.username,
        password:this.state.password
@@ -74,7 +76,7 @@ class Login extends React.Component {
   <FormGroup>
     <Col smOffset={2} sm={10}>
 
-      <input type="submit" value="Submit" onClick={this.validate} />
+      <input type="submit" value="Submit"  onClick={this.validate} />
     
       
       

@@ -12,7 +12,7 @@ import ListOfAllUsers from './src/Users/ListOfAllUsers.jsx'
 import ListOfAllProducts from './src/Products/ListOfAllProducts.jsx'
 import Slider from './src/slider.jsx'
 import LoginAdmin from './src/LoginUser.jsx'
-
+import AdminControls from './src/AdminControls.jsx'
 ReactDOM.render(<BrowserRouter> 
     <div>
 
@@ -21,7 +21,7 @@ ReactDOM.render(<BrowserRouter>
          
 
         <Route path='/Login' component={LoginAdmin}/>
-
+        <Route path='/Admincontrols' component={AdminControls}/>
         
         <Route path='/User' component={User}/>
         <Route path='/PostUser' component={PostUser}/>

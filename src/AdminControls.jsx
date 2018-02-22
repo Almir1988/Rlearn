@@ -8,7 +8,7 @@ import Imtree from './images/imtree.png'
 import Slider from './slider.jsx'
 import {Link} from 'react-router-dom';
 
-class Content extends React.Component{
+class Admincontrols extends React.Component{
 
 	render()
 	{
@@ -17,10 +17,14 @@ class Content extends React.Component{
 
 		return(
 			<div className="container">
-  <center><h3>This is a content</h3></center>
+    <Jumbotron>  
+  <h2>HOME</h2>
+  <li><Link to='/User'>USERS</Link></li>
+  <li><Link to='/Product'>PRODUCTS</Link></li>
+</Jumbotron>
 			</div>
 		);
 	}
 }
 
-export default Content;
+export default Admincontrols;
