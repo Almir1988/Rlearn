@@ -25,7 +25,7 @@ class Header extends React.Component{
     <Nav pullRight>
       <NavItem >
       <Link  className="login" to="/Login">
-       LOGIN  
+       Login  
       </Link>
       </NavItem>
     </Nav>
