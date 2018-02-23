@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link,withRouter} from "react-router-dom";
-import {FormGroup,Col,Form,FormControl,Button,ControlLabel} from 'react-bootstrap';
+import {FormGroup,Col,Form,FormControl,Button,ControlLabel,HelpBlock} from 'react-bootstrap';
 import './LoginUser.css';
 import Footer from './Footer.jsx'
 
@@ -35,16 +35,16 @@ class LoginUser extends React.Component {
       {
          
          console.log('login successful');
-         
+         tr;
       }
       else
       {
       console.log('login faild');
-      
-      
+      this.props.history.push("/Login");
+       
       }
 
-      tr;
+     
     
    }
    handleChange(e) {
@@ -76,6 +76,7 @@ class LoginUser extends React.Component {
   <FormGroup>
     <Col smOffset={2} sm={10}>
       <Button type="submit" bsStyle="info" onClick={this.validate}>Submit</Button>
+      
     </Col>
   </FormGroup>
 </Form>

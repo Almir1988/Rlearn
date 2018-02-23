@@ -11,12 +11,12 @@ class Contact  extends React.Component{
        {
            return(
      <div>
-          <div class="container">
-         <h1>Contac Us</h1>
+          <div class="container" >
+         <h1>Contact Us</h1>
 
 
       
-         <Form horizontal>
+         <Form  className="ContactStyle" horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
    

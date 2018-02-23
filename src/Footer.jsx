@@ -16,8 +16,8 @@ class Footer extends React.Component{
                   <div className="col-sm-2">
                       <h5>Get started</h5>
                       <ul>
-                          <li><a href="#">Home</a></li>
-                       <li><Link  class="Registration"to="/Registration">Sign Up</Link></li>
+                          <li><Link  to="/Home">Home</Link></li>
+                       <li><Link  to="/Registration">Sign Up</Link></li>
                           <li><a href="#">Downloads</a></li>
                       </ul>
                   </div>
