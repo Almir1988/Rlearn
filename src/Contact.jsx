@@ -15,7 +15,7 @@ class Contact  extends React.Component{
          <h1>Contac Us</h1>
 
 
-         <Jumbotron className="Cbackground">
+      
          <Form horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
@@ -59,7 +59,7 @@ class Contact  extends React.Component{
  
   
 </Form>
-</Jumbotron>
+
           </div>
           <div>
               
