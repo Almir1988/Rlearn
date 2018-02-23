@@ -32,7 +32,7 @@ class Footer extends React.Component{
                       <h5>About us</h5>
                       <ul>
                           <li><a href="#">Company Information</a></li>
-                          <li><a href="#">Contact us</a></li>
+                          <li><Link to="/Contact">Contact Us</Link></li>
                           <li><a href="#">Reviews</a></li>
                       </ul>
                   </div>

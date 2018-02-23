@@ -35,14 +35,14 @@ class Content extends React.Component{
 
 <div className="container">
 <Jumbotron>
-  <h1>Landing page</h1>
+  <h1>Home page</h1>
   <p>
   Lorem ipsum dolor sit amet, ne possit evertitur scripserit pro. Quo eu meis option volumus, vel ullum lobortis at, eu falli elaboraret vix. Alienum fastidii et vix, et nec augue comprehensam, ei choro numquam vis. Ne eros prompta eam, partem convenire dissentiet pro ex. At magna error appellantur his, an duo facer errem, has accusamus omittantur reprehendunt te. Ne idque virtute adipiscing qui, munere civibus officiis eu ius.
   </p>
   <p>
   
 
-         <Button bsStyle="primary" onClick={() => this.setState({ open: !this.state.open })}>
+         <Button className="BtnColor" bsStyle="primary" onClick={() => this.setState({ open: !this.state.open })}>
           Read more about us
         </Button>
         <Collapse in={this.state.open}>
@@ -68,7 +68,7 @@ class Content extends React.Component{
     <Col xs={6} md={4}>
       <Thumbnail src={Imone} alt="242x200">
         <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
         <p>
         
         </p>
@@ -77,7 +77,7 @@ class Content extends React.Component{
     <Col xs={6} md={4}>
       <Thumbnail src={Imtwo} alt="242x200">
         <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
         <p>
           
         </p>
@@ -86,7 +86,7 @@ class Content extends React.Component{
     <Col xs={6} md={4}>
       <Thumbnail src={Imtree} alt="242x200">
         <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
         <p>
         
         </p>

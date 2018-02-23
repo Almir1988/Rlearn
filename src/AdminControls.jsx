@@ -7,6 +7,11 @@ import Imtwo from './images/imtwo.png'
 import Imtree from './images/imtree.png'
 import {Link} from 'react-router-dom';
 import './Style.css'
+
+
+
+
+
 class Admincontrols extends React.Component{
 
 	render()

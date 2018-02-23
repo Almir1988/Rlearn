@@ -56,7 +56,7 @@ class Header extends React.Component{
         </Link>
       </NavItem>
       <NavItem eventKey={2} href="#">
-        <Link  class="Registration"to="/Registration">  
+        <Link class="login"to="/Registration">  
           Sign Up
         </Link>
       </NavItem>
