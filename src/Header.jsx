@@ -13,10 +13,10 @@ class Header extends React.Component{
        {
         return(
            <div className="position">
-             <Navbar >
+             <Navbar   collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-      <Link to="/">
+      <Link className="logo" to="/">
        LOGO
       </Link>
     </Navbar.Brand>
@@ -33,7 +33,7 @@ class Header extends React.Component{
       </NavItem>
       <Nav pullRight>
       <NavItem eventKey={1} href="#">
-      <Link  class="login"to="/Home">  
+      <Link  className="login"to="/Home">  
           Home
         </Link>
       </NavItem>
@@ -56,7 +56,7 @@ class Header extends React.Component{
         </Link>
       </NavItem>
       <NavItem eventKey={2} href="#">
-        <Link class="login"to="/Registration">  
+        <Link className="login"to="/Registration">  
           Sign Up
         </Link>
       </NavItem>

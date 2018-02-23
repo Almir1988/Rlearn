@@ -6,6 +6,7 @@ class Footer extends React.Component{
   {
          return(
          
+            <div>
           <footer id="myFooter">
           <div className="container">
               <div className="row">
@@ -49,7 +50,7 @@ class Footer extends React.Component{
           
       </footer>
       
-            
+            </div>
   );
 }
 }   

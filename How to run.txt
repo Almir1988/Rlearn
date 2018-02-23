@@ -1,0 +1,4 @@
+-Before you open all files and project download RESTAPI from https://github.com/Almir1988/RESTAPITASK
+-Open folder, and run this command in you treminal nodemon run start this command will start server API'S
+-Next step is, download UI from https://github.com/Almir1988/Rlearn and after that open again your terminal
+and type npm start.
