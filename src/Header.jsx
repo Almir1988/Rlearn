@@ -6,7 +6,10 @@ import './Header.css';
 
 
 class Header extends React.Component{
-       render()
+  
+  
+  
+  render()
        {
         return(
            <div className="position">
@@ -30,20 +33,31 @@ class Header extends React.Component{
       </NavItem>
       <Nav pullRight>
       <NavItem eventKey={1} href="#">
-        Home
+      <Link  class="login"to="/Home">  
+          Home
+        </Link>
       </NavItem>
       <NavItem eventKey={2} href="#">
-        About
+      <Link  class="login"to="/About">  
+          About
+        </Link>
       </NavItem>
       <NavItem eventKey={2} href="#">
         Products
       </NavItem>
       <NavItem eventKey={2} href="#">
-        Contact
+      <Link  class="login"to="/Contact">  
+          Contact
+        </Link>
       </NavItem>
       <NavItem eventKey={2} href="#">
         <Link  class="login"to="/Login">  
-          LOGIN
+          Sign In
+        </Link>
+      </NavItem>
+      <NavItem eventKey={2} href="#">
+        <Link  class="Registration"to="/Registration">  
+          Sign Up
         </Link>
       </NavItem>
     </Nav>

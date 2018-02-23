@@ -2,6 +2,7 @@ import React from 'react';
 import {Link,withRouter} from "react-router-dom";
 import {FormGroup,Col,Form,FormControl,Button,ControlLabel} from 'react-bootstrap';
 import './LoginUser.css';
+import Footer from './Footer.jsx'
 
 class LoginUser extends React.Component {
 
@@ -51,7 +52,11 @@ class LoginUser extends React.Component {
   }
    render() {
       return (
+
+        <div>
          <div className="container">
+
+         <h1>Log into your account</h1>
            <Form  className="FormPos"horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} sm={2}>
@@ -76,6 +81,11 @@ class LoginUser extends React.Component {
 </Form>
            
          </div>
+
+         <div>
+           <Footer/>
+           </div>
+           </div>
       );
    }
 }

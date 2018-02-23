@@ -27,7 +27,7 @@ class PostProducts extends React.Component {
        
         
       
-        this.props.history.push("/");
+        this.props.history.push("/Product");
       }
 
       AddProduct()

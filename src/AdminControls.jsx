@@ -16,6 +16,8 @@ class Admincontrols extends React.Component{
 
 		return(
 			<div className="container">
+
+
     <Jumbotron>  
   <h2>ADMIN PANEL</h2>
   <li><Link to='/User'>USERS</Link></li>

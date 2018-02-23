@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {Media} from "react-bootstrap";
-import {Button,Row,Col,Jumbotron,Grid,Thumbnail,Carousel,Image} from "react-bootstrap";
+import {Button,Row,Col,Jumbotron,Grid,Thumbnail,Carousel,Image,Collapse,Well} from "react-bootstrap";
 import Imone  from './images/imone.png'
 import Imtwo from './images/imtwo.png'
 import Imtree from './images/imtree.png'
@@ -10,6 +10,17 @@ import Slider from  './slider.jsx'
 import Footer from './Footer.jsx'
 import './Style.css'
 class Content extends React.Component{
+
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      open: false
+    };
+  }
+
+
+
 
 	render()
 	{
@@ -24,13 +35,23 @@ class Content extends React.Component{
 
 <div className="container">
 <Jumbotron>
-  <h1>Hello, world!</h1>
+  <h1>Landing page</h1>
   <p>
-    This is a simple hero unit, a simple jumbotron-style component for calling
-    extra attention to featured content or information.
+  Lorem ipsum dolor sit amet, ne possit evertitur scripserit pro. Quo eu meis option volumus, vel ullum lobortis at, eu falli elaboraret vix. Alienum fastidii et vix, et nec augue comprehensam, ei choro numquam vis. Ne eros prompta eam, partem convenire dissentiet pro ex. At magna error appellantur his, an duo facer errem, has accusamus omittantur reprehendunt te. Ne idque virtute adipiscing qui, munere civibus officiis eu ius.
   </p>
   <p>
-    <Button bsStyle="primary">Learn more</Button>
+  
+
+         <Button bsStyle="primary" onClick={() => this.setState({ open: !this.state.open })}>
+          Read more about us
+        </Button>
+        <Collapse in={this.state.open}>
+          <div>
+            <Well>
+            Lorem ipsum dolor sit amet, ne possit evertitur scripserit pro. Quo eu meis option volumus, vel ullum lobortis at, eu falli elaboraret vix. Alienum fastidii et vix, et nec augue comprehensam, ei choro numquam vis. Ne eros prompta eam, partem convenire dissentiet pro ex. At magna error appellantur his, an duo facer errem, has accusamus omittantur reprehendunt te. Ne idque virtute adipiscing qui, munere civibus officiis eu ius.
+            </Well>
+          </div>
+        </Collapse>
   </p>
 </Jumbotron>
 </div>

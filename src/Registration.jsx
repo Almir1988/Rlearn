@@ -3,8 +3,9 @@ import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,co
 import Header from './Header.jsx';
 import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
-
-class PostUser extends React.Component {  
+import './Style.css'
+import Footer from './Footer.jsx'
+class Registration extends React.Component {  
         constructor(props)
         {
           super(props);
@@ -17,17 +18,10 @@ class PostUser extends React.Component {
           };
 
         }
-
-
         Transfer () {
-       
-        
-      
-          this.props.history.push("/User");
+          this.props.history.push("/");
         }
-
-
-        AddUser() { 
+        Register() { 
 
           const tr=this.Transfer();
         const body ={
@@ -38,7 +32,7 @@ class PostUser extends React.Component {
         };
         axios.post(`http://localhost:3000/User`, body)
         .then(res =>this.setState({
-          msg:'User added successfully',
+          msg:'Register successfully',
           FirstName:'',
           LastName:'',
           Email:'',
@@ -46,29 +40,22 @@ class PostUser extends React.Component {
           tr
         }))
         .catch(err => {
+          msg:'Enter your information'
           debugger;
         });
       }
       handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
       }
-
-      
          render()
          {
              return(
-                
+
+              <div>
               <div className="container">
 
-
-
-           <Jumbotron>  
-             <li><Link to='/User'>RETURN TO USERS</Link></li>
-           </Jumbotron>
-
-
-
-                <Form horizontal>
+              <h1>Create your Account</h1>
+                <Form className="RegisterPos" horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
    
@@ -105,21 +92,21 @@ class PostUser extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
    
-    <Button type="submit" bsStyle="info" onClick={this.AddUser.bind(this)} >Add User</Button>
+    <Button type="submit" bsStyle="info" onClick={this.Register.bind(this)} >Add User</Button>
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
- 
-  
-</Form>
+  </Form>
               </div>
-
+              <div>
+<Footer/>
+         </div>       
+                </div>
              );
-
-         }
+        }
 }
 
-export default withRouter(PostUser);
+export default withRouter(Registration);
 
 
 
