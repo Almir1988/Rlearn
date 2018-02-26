@@ -11,7 +11,7 @@ class Contact  extends React.Component{
        {
            return(
      <div>
-          <div class="container" >
+          <div className="container" >
          <h1>Contact Us</h1>
 
 

@@ -34,7 +34,7 @@ class Content extends React.Component{
 <Slider/>
 
 <div className="container">
-<Jumbotron className="Cbackground">
+<Jumbotron >
   <h1>Home page</h1>
   <p>
   Lorem ipsum dolor sit amet, ne possit evertitur scripserit pro. Quo eu meis option volumus, vel ullum lobortis at, eu falli elaboraret vix. Alienum fastidii et vix, et nec augue comprehensam, ei choro numquam vis. Ne eros prompta eam, partem convenire dissentiet pro ex. At magna error appellantur his, an duo facer errem, has accusamus omittantur reprehendunt te. Ne idque virtute adipiscing qui, munere civibus officiis eu ius.
@@ -66,7 +66,7 @@ class Content extends React.Component{
            
   <Row>            
     <Col xs={6} md={4}>
-      <Thumbnail src={Imone} alt="242x200">
+      <Thumbnail className="colhower" src={Imone} alt="242x200">
         <h3>Thumbnail label</h3>
         <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
         <p>

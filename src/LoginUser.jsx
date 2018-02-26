@@ -12,7 +12,8 @@ class LoginUser extends React.Component {
          this.state={
            
              username:'',
-             password:''      
+             password:'',
+              
          }
          this.validate=this.validate.bind(this);
     }
@@ -30,7 +31,9 @@ class LoginUser extends React.Component {
        username:this.state.username,
        password:this.state.password
      }
-
+       
+     
+      
       if(val.username==="admin" && val.password ==="admin")
       {
          
@@ -39,9 +42,12 @@ class LoginUser extends React.Component {
       }
       else
       {
+          
+        msg1:"Enter Username";
+        msg2:"Enter Password"
+    
       console.log('login faild');
       this.props.history.push("/Login");
-       
       }
 
      
@@ -64,15 +70,21 @@ class LoginUser extends React.Component {
     </Col>
     <Col sm={10}>
       <FormControl type="text" name="username" placeholder="username"  value={this.state.username} onChange={this.handleChange.bind(this)} />
+      {this.state.msg1 && <HelpBlock>{this.state.msg1}</HelpBlock>}
     </Col>
+    
   </FormGroup>
+  
   <FormGroup controlId="formHorizontalPassword">
     <Col componentClass={ControlLabel} sm={2}>
     </Col>
     <Col sm={10}>
       <FormControl type="password" name="password" placeholder="Password" value={this.state.password}  onChange={this.handleChange.bind(this)} />
+      {this.state.msg2 && <HelpBlock>{this.state.msg2}</HelpBlock>}
     </Col>
+    
   </FormGroup>
+  
   <FormGroup>
     <Col smOffset={2} sm={10}>
       <Button type="submit" bsStyle="info" onClick={this.validate}>Submit</Button>

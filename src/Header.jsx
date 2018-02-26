@@ -32,30 +32,30 @@ class Header extends React.Component{
       </Link>
       </NavItem>
       <Nav pullRight>
-      <NavItem eventKey={1} href="#">
+      <NavItem eventKey={1} >
       <Link  className="login"to="/Home">  
           Home
         </Link>
       </NavItem>
-      <NavItem eventKey={2} href="#">
-      <Link  class="login"to="/About">  
+      <NavItem eventKey={2} >
+      <Link  className="login"to="/About">  
           About
         </Link>
       </NavItem>
-      <NavItem eventKey={2} href="#">
+      <NavItem eventKey={2} >
         Products
       </NavItem>
-      <NavItem eventKey={2} href="#">
-      <Link  class="login"to="/Contact">  
+      <NavItem eventKey={2} >
+      <Link  className="login"to="/Contact">  
           Contact
         </Link>
       </NavItem>
-      <NavItem eventKey={2} href="#">
-        <Link  class="login"to="/Login">  
+      <NavItem eventKey={2} >
+        <Link  className="login"to="/Login">  
           Sign In
         </Link>
       </NavItem>
-      <NavItem eventKey={2} href="#">
+      <NavItem eventKey={2} >
         <Link className="login"to="/Registration">  
           Sign Up
         </Link>

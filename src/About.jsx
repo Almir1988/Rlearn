@@ -12,7 +12,7 @@ class About  extends React.Component{
        {
            return(
         <div>
-          <div class="container">
+          <div className="container">
          <h1>About Us</h1>
          <Jumbotron className="Cbackground">
   <h1>Lorem ipsum dolor sit amet</h1>
