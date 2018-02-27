@@ -54,7 +54,7 @@ class Registration extends React.Component {
               <div>
               <div className="container">
 
-              <h1>Create your Account</h1>
+              <h1>Sign Up</h1>
                 <Form className="RegisterPos" horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
@@ -92,7 +92,7 @@ class Registration extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
    
-    <Button type="submit" bsStyle="info" onClick={this.Register.bind(this)} >Add User</Button>
+    <Button type="submit" className="AllButtons" bsStyle="info" onClick={this.Register.bind(this)} >Submit</Button>
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>

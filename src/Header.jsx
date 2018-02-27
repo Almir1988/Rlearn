@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
-import {Nav,Navbar,NavDropdown,NavItem,MenuItem} from 'react-bootstrap';
+import {Nav,Navbar,NavDropdown,NavItem,MenuItem,Button} from 'react-bootstrap';
 import './Header.css';
 
 
@@ -12,12 +12,12 @@ class Header extends React.Component{
   render()
        {
         return(
-           <div className="position">
+           <div>
              <Navbar   collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-      <Link className="logo" to="/">
-       LOGO
+      <Link className="login" to="/">
+      WEBSTITE
       </Link>
     </Navbar.Brand>
     <Navbar.Toggle />
@@ -43,7 +43,9 @@ class Header extends React.Component{
         </Link>
       </NavItem>
       <NavItem eventKey={2} >
+      <Link  className="login"to="/">  
         Products
+        </Link>
       </NavItem>
       <NavItem eventKey={2} >
       <Link  className="login"to="/Contact">  
@@ -51,14 +53,14 @@ class Header extends React.Component{
         </Link>
       </NavItem>
       <NavItem eventKey={2} >
-        <Link  className="login"to="/Login">  
-          Sign In
-        </Link>
+        <Button className="Navbtn"><Link  className=""to="/Login">  
+          SIGN IN
+        </Link></Button>
       </NavItem>
       <NavItem eventKey={2} >
-        <Link className="login"to="/Registration">  
-          Sign Up
-        </Link>
+        <Button className="Navbtn"><Link className=""to="/Registration">  
+          SIGN UP
+        </Link></Button>
       </NavItem>
     </Nav>
      

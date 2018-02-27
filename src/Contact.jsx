@@ -43,7 +43,6 @@ class Contact  extends React.Component{
   </FormGroup>
   <FormGroup controlId="message">
     <Col componentClass={ControlLabel} xs={2}>
-    
     </Col>
     <Col xs={10}>
     <textarea placeholder="Message" className="ContactMessage">

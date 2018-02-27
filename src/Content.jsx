@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Media} from "react-bootstrap";
 import {Button,Row,Col,Jumbotron,Grid,Thumbnail,Carousel,Image,Collapse,Well} from "react-bootstrap";
-import Imone  from './images/imone.png'
-import Imtwo from './images/imtwo.png'
-import Imtree from './images/imtree.png'
+import imgbuttom from './images/imgbuttom.jpg'
+import ContentImgOne from './images/Cimgone.jpg'
+import ContentImgTwo from './images/Cimgtwo.jpg'
+import ContentImgTree from './images/Cimgtree.jpg'
+import ButtomContentImg from './images/ButtomContentImg.jpg'
 import {Link} from 'react-router-dom';
 import Slider from  './slider.jsx'
 import Footer from './Footer.jsx'
@@ -18,90 +20,75 @@ class Content extends React.Component{
       open: false
     };
   }
-
-
-
-
 	render()
 	{
 		return(
 			<div>
-
-
-
-
-
 <Slider/>
 
-<div className="container">
-<Jumbotron >
-  <h1>Home page</h1>
-  <p>
-  Lorem ipsum dolor sit amet, ne possit evertitur scripserit pro. Quo eu meis option volumus, vel ullum lobortis at, eu falli elaboraret vix. Alienum fastidii et vix, et nec augue comprehensam, ei choro numquam vis. Ne eros prompta eam, partem convenire dissentiet pro ex. At magna error appellantur his, an duo facer errem, has accusamus omittantur reprehendunt te. Ne idque virtute adipiscing qui, munere civibus officiis eu ius.
-  </p>
-  <p>
-  
-
-         <Button className="BtnColor" bsStyle="primary" onClick={() => this.setState({ open: !this.state.open })}>
-          Read more about us
-        </Button>
-        <Collapse in={this.state.open}>
-          <div>
-            <Well>
-            Lorem ipsum dolor sit amet, ne possit evertitur scripserit pro. Quo eu meis option volumus, vel ullum lobortis at, eu falli elaboraret vix. Alienum fastidii et vix, et nec augue comprehensam, ei choro numquam vis. Ne eros prompta eam, partem convenire dissentiet pro ex. At magna error appellantur his, an duo facer errem, has accusamus omittantur reprehendunt te. Ne idque virtute adipiscing qui, munere civibus officiis eu ius.
-            </Well>
-          </div>
-        </Collapse>
-  </p>
-</Jumbotron>
-</div>
 
 
 
+<div className="Contenticons">
 
 
-        
-        <Grid>
-
-           
-  <Row>            
+ <Grid>
+  <Row>
     <Col xs={6} md={4}>
-      <Thumbnail className="colhower" src={Imone} alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
+    <Thumbnail className="TCicons" src={ContentImgTwo} alt="242x200" >
+        <h3>Icon One</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>
-        
         </p>
-      </Thumbnail>
+        </Thumbnail>
     </Col>
     <Col xs={6} md={4}>
-      <Thumbnail src={Imtwo} alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
+    <Thumbnail className="TCicons" src={ContentImgTwo} alt="242x200">
+        <h3>Icon Two</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <p>
-          
         </p>
-      </Thumbnail>
+        </Thumbnail>
     </Col>
     <Col xs={6} md={4}>
-      <Thumbnail src={Imtree} alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Eu ac dui elit vestibulum, arcu morbi in euismod mauris fringilla sollicitudin, non at, amet sed ad. </p>
+    <Thumbnail className="TCicons" src={ContentImgTwo} alt="242x200">
+        <h3>Icon Tree</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <p>
-        
+         
         </p>
-      </Thumbnail>
+        </Thumbnail>
     </Col>
   </Row>
 </Grid>
 
-<Jumbotron>
- 
 
-    
-  
-</Jumbotron>;
 
+
+
+
+</div>
+<div className="" >
+<Image className="ContImg" src={ButtomContentImg}responsive />;
+</div>
+
+
+<div className="ContentButtom">
+   <Grid >
+   <Row className="show-grid">
+    <Col xs={12} md={8} >
+    <Image className="ContentButtomCol" src={imgbuttom} responsive />;
+    </Col>
+    <Col xs={6} md={4} className="ContentButtomCol2">
+    <h3>LOREM IPSUM DOLOR SIT AMET</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Col>
+  </Row>
+
+     </Grid>
+  </div>
 <Footer/>
 			</div>
 		);

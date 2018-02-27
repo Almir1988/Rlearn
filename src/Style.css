@@ -1,6 +1,6 @@
 body{
 
-      background-color:rgb(246,237,227);
+     
 
 }
 
@@ -30,15 +30,16 @@ a {
 
     height: 50px;
 }
+
 .login{
 
-   
+    display: inline-block;
     padding-right: 10px;
     font-family: "Times New Roman", Times, serif;
 }
 .login:hover{
     text-decoration: none;
-    color:rgb(64,192,251);
+    color: rgb(93,128,2);
 }
 .Registration{
 
@@ -52,6 +53,7 @@ a {
 h3{
 
     text-align: center;
+    font-family: "Times New Roman", Times, serif;
 }
 p{
 
@@ -60,7 +62,7 @@ p{
 h1
 {
     text-align: center;
-
+    font-family: "Times New Roman", Times, serif;
 }
 .RegisterPos{
 
@@ -75,11 +77,15 @@ h1
 }
 .BtnColor
 {
-    background-color:#2e6da4;
+    background-color:rgb(93,128,2);
+    border-color: rgb(93,128,2);
+}
+.BtnColor:hover{
+    background-color:gray;
 }
 .Cbackground{
 
-     background-color: rgb(247,206,43);
+    background-color:rgb(93,128,2);
 }
 .logo{
 
@@ -106,6 +112,126 @@ h1
 
     
 }
+.AllButtons
+{
+
+    background-color: rgb(93,128,2);
+    border-color: rgb(93,128,2);
+}
+.btn-info{
+
+    background-color: rgb(93,128,2);
+    border-color: rgb(93,128,2);
+}
+.btn-info:hover{
+
+    background-color: gray;
+    border-color:gray;
+    
+}
+.btn-primary.focus, .btn-primary:focus
+{
+    background-color: rgb(93,128,2);
+    border-color: rgb(93,128,2);
+
+}
+.btn-info.focus, .btn-info:focus{
+
+    background-color: rgb(93,128,2);
+    border-color: rgb(93,128,2);
+}
+.btn-info.active, .btn-info:active, .open>.dropdown-toggle.btn-info{
+
+
+    background-color: rgb(93,128,2);
+    border-color: rgb(93,128,2);
+
+}
+.btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover, .open>.dropdown-toggle.btn-info.focus, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover{
+
+    background-color: rgb(93,128,2);
+    border-color: rgb(93,128,2);
+
+
+}
+
+.navbar {
+
+
+        position: relative;
+        margin-bottom: 0px;
+        top: 0;
+        width: 100%;
+
+        
+ }
+ 
+ a:focus, a:hover
+ {
+
+    color:none;
+    text-decoration: none;
+ }
 
 
 
+.Imgpos
+{
+    margin-left: 20px;
+}
+.TCicons
+{
+
+    border:0;
+}
+
+.Contenticons{
+
+   margin-top: 100px;
+   margin-bottom: 80px;
+}
+.ContImg
+{
+
+    width: 100%;
+    height: 400px;
+    margin-bottom: 0px;
+}
+.ContentButtom{
+
+        background-color:gray;
+        width: 100%;
+        height: 400px;
+        margin-top: -21px;
+
+}
+.ContentButtomCol
+{
+     padding-top: 50px;
+     width: 600px;
+     height: 350px;
+
+}
+
+.ContentButtomCol2{
+
+    padding-top: 80px;
+
+}
+.ContentButtomCol2 p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    color:white;
+}
+.ContentButtomCol2 h3 {
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 300;
+    color:white;
+}
