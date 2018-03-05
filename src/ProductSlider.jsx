@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Carousel,} from 'react-bootstrap';
-import ImageOne from './images/imageone.jpg'
-import ImageTwo from './images/imagetwo.jpg'
-import ImageTree from './images/imagetree.jpg'
+import ImageOne from './images/ProdSlideOne.png'
+import ImageTwo from './images/ProductSlideTwo.png'
+import ImageTree from './images/ProductSlideTree.png'
 
-class Slider extends  React.Component
+class ProductSlider extends  React.Component
 {
 
         render()
@@ -23,13 +23,13 @@ class Slider extends  React.Component
   <Carousel.Item>
     <img width={2000} height={900} alt="900x500" src={ImageTwo} />
     <Carousel.Caption>
-   
+    
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img width={2000} height={900} alt="" src={ImageTree}/>
     <Carousel.Caption>
-    
+     
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel> 
@@ -44,4 +44,4 @@ class Slider extends  React.Component
 }
 
 
-export default Slider;
+export default ProductSlider;

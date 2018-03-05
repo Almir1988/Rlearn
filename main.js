@@ -16,15 +16,16 @@ import AdminControls from './src/AdminControls.jsx'
 import UserRegistration from './src/Registration.jsx'
 import ContactUs from './src/Contact.jsx'
 import AboutUs from './src/About.jsx'
-
-
-
+import ProductFront from './src/ProductFront.jsx'
+import ProductApp
 
 ReactDOM.render(<BrowserRouter> 
     <div>
 
       <Header/>
       <Switch>
+
+        <Route path='/Products' component={ProductFront}/>
        <Route path='/About' component={AboutUs}/>
         <Route path='/Contact' component={ContactUs}/>
         <Route path='/Registration' component={UserRegistration}/> 

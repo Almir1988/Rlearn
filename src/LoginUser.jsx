@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link,withRouter} from "react-router-dom";
-import {FormGroup,Col,Form,FormControl,Button,ControlLabel,HelpBlock} from 'react-bootstrap';
+import {FormGroup,Col,Form,FormControl,Button,ControlLabel,Image,HelpBlock} from 'react-bootstrap';
 import './LoginUser.css';
-import Footer from './Footer.jsx'
-import './Style.css'
+import Footer from './Footer.jsx';
+import ProFileImg from './images/Profile.png';
+
 class LoginUser extends React.Component {
 
     constructor(props)
@@ -15,10 +16,6 @@ class LoginUser extends React.Component {
          }
          this.validate=this.validate.bind(this);
     }
-
-
-
-
     Transfer () {
 
         this.props.history.push("/AdminControls");
@@ -27,12 +24,20 @@ class LoginUser extends React.Component {
    validate()
    { 
     var tr=this.Transfer();
+ 
      var val={
        username:this.state.username,
        password:this.state.password
      }
        
-     
+      if( this.state.username== "" || this.state.password== "")
+      {
+        this.setState({
+          msg1:'Enter Username',
+          msg2:'Enter Password'
+        });
+      }     
+      
        
       
       if(val.username==="admin" && val.password ==="admin")
@@ -45,9 +50,7 @@ class LoginUser extends React.Component {
       { 
         console.log('login faild');
         this.props.history.push("/Login");
-        msg1:'Enter Username';
-        msg2:'Enter Password';
-        msg3:'Login faild';
+       
       }
    }
    handleChange(e) {
@@ -56,17 +59,19 @@ class LoginUser extends React.Component {
    render() {
       return (
         <div>
-         <div className="container">
-         <h1>Sign in</h1>
-           <Form  className="FormPos"horizontal>
+       <div className="container">  
+        
+       <div className="FormPosC">
+       <h3>SIGN IN </h3>
+           <Form  horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} sm={2}>
     </Col>
     <Col sm={10}>
       <FormControl type="text" name="username" placeholder="username"  value={this.state.username} onChange={this.handleChange.bind(this)} />
-      {this.state.msg1 && <HelpBlock>{this.state.msg1}</HelpBlock>}
+      {this.state.msg1 && <HelpBlock className="Valid">{this.state.msg1}</HelpBlock>}
     </Col>
-    
+   
   </FormGroup>
   
   <FormGroup controlId="formHorizontalPassword">
@@ -74,7 +79,7 @@ class LoginUser extends React.Component {
     </Col>
     <Col sm={10}>
       <FormControl type="password" name="password" placeholder="Password" value={this.state.password}  onChange={this.handleChange.bind(this)} />
-      {this.state.msg2 && <HelpBlock>{this.state.msg2}</HelpBlock>}
+      {this.state.msg2 && <HelpBlock className="Valid">{this.state.msg2}</HelpBlock>}
     </Col>
     
   </FormGroup>
@@ -82,17 +87,20 @@ class LoginUser extends React.Component {
   <FormGroup>
     <Col smOffset={2} sm={10}>
       <Button type="submit" bsStyle="info" onClick={this.validate}>Submit</Button>
-      {this.state.msg3 && <HelpBlock>{this.state.msg3}</HelpBlock>}
+    
     </Col>
   </FormGroup>
 </Form>
            
-         </div>
+</div>
 
-         <div>
+</div>
+
            <Footer/>
-           </div>
-           </div>
+          </div>
+          
+          
+          
       );
    }
 }

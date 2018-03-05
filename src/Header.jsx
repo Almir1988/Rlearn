@@ -6,9 +6,6 @@ import './Header.css';
 
 
 class Header extends React.Component{
-  
-  
-  
   render()
        {
         return(
@@ -17,7 +14,7 @@ class Header extends React.Component{
   <Navbar.Header>
     <Navbar.Brand>
       <Link className="login" to="/">
-      WEBSTITE
+      WEBSITE
       </Link>
     </Navbar.Brand>
     <Navbar.Toggle />
@@ -43,7 +40,7 @@ class Header extends React.Component{
         </Link>
       </NavItem>
       <NavItem eventKey={2} >
-      <Link  className="login"to="/">  
+      <Link  className="login"to="/Products">  
         Products
         </Link>
       </NavItem>

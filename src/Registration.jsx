@@ -1,10 +1,9 @@
 import React from 'react';
-import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
-import Header from './Header.jsx';
+import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock,Grid} from 'react-bootstrap';
 import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
-import './Style.css'
-import Footer from './Footer.jsx'
+import Footer from './Footer.jsx';
+import './Registration.css';
 class Registration extends React.Component {  
         constructor(props)
         {
@@ -22,6 +21,19 @@ class Registration extends React.Component {
           this.props.history.push("/");
         }
         Register() { 
+
+
+          if( this.state.FirstName== "" || this.state.LastName== "" || this.state.Email== "" || this.state.Password)
+          {
+            this.setState({
+              msg1:'Enter FirstName',
+              msg2:'Enter LastName',
+              msg3:'Enter Email',
+              msg4:'Enter Password'
+            });
+          }  
+
+
 
           const tr=this.Transfer();
         const body ={
@@ -50,18 +62,21 @@ class Registration extends React.Component {
          render()
          {
              return(
+<div>
+  
 
-              <div>
-              <div className="container">
-
-              <h1>Sign Up</h1>
-                <Form className="RegisterPos" horizontal>
+              <div div className="container">
+              
+               <div className="RegisterPosMain">
+              <h3>SIGN UP</h3>
+                <Form horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
    
     </Col>
     <Col xs={10}>
       <FormControl type="text" name="FirstName" placeholder="FirstName" value={this.state.FirstName} onChange={this.handleChange.bind(this)}/>
+      {this.state.msg1 && <HelpBlock className="Valid">{this.state.msg1}</HelpBlock>}
     </Col>
   </FormGroup>
   <FormGroup controlId="LastName">
@@ -70,14 +85,15 @@ class Registration extends React.Component {
     </Col>
     <Col xs={10}>
       <FormControl type="text" name="LastName" placeholder="LastName"value={this.state.LastName} onChange={this.handleChange.bind(this)}/>
+      {this.state.msg2 && <HelpBlock className="Valid">{this.state.msg2}</HelpBlock>}
     </Col>
   </FormGroup>
   <FormGroup controlId="Email" >
     <Col componentClass={ControlLabel} xs={2}>
-    
     </Col>
     <Col xs={10}>
       <FormControl type="email"  name="Email" placeholder="Email" value={this.state.Email} onChange={this.handleChange.bind(this)} />
+      {this.state.msg3 && <HelpBlock className="Valid">{this.state.msg3}</HelpBlock>}
     </Col>
   </FormGroup>
 
@@ -87,6 +103,7 @@ class Registration extends React.Component {
     </Col>
     <Col xs={10}>
       <FormControl type="password" name="Password" placeholder="Password" value={this.state.Password} onChange={this.handleChange.bind(this)} />
+      {this.state.msg4 && <HelpBlock className="Valid">{this.state.msg4}</HelpBlock>}
     </Col>
   </FormGroup>
   <FormGroup>
@@ -98,10 +115,14 @@ class Registration extends React.Component {
   </FormGroup>
   </Form>
               </div>
-              <div>
-<Footer/>
-         </div>       
-                </div>
+              
+
+        
+           
+        </div>
+         
+         <Footer/>     
+         </div>     
              );
         }
 }
