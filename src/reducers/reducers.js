@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { CREATE_PRODUCT } from '../actions/actions'
-function AddProduct(state,action){
+function AddProduct(state,action)
+{
 
         switch(action.type)
         {
