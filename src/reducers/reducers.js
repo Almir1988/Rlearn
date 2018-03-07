@@ -1,32 +1,19 @@
 import { combineReducers } from 'redux'
-import { CREATE_PRODUCT } from '../actions/actions'
-function AddProduct(state,action)
-{
+import { LOGIN_ADMIN} from '../actions/actions'
 
-        switch(action.type)
-        {
-          case CREATE_PRODUCT:
-           return {
-               
-                ProductName:action.ProductName,
-                Quantity:action.Quantity
-           }
-           default :
-           return state
-        }
+function admins(state = [], action) {
+   switch (action.type) {
+      case LOGIN_ADMIN:
+         return [
+            ...state,
+            action.admin 
+         ]
+      default:
+         return state
+   }
 }
-function AddProducts(state=[],action){
-    switch(action.type)
-    {
-      case CREATE_PRODUCT:
-       return [   
-        AddProduct(undefined,action)
-       ]
-       default :
-       return state
-    }
-}
-const ProductApp = combineReducers({
-    AddProducts
- })
-export default ProductApp
+const AdminRed = combineReducers({
+      admins
+})
+
+export default (AdminRed)

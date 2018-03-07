@@ -17,9 +17,14 @@ import UserRegistration from './src/Registration.jsx'
 import ContactUs from './src/Contact.jsx'
 import AboutUs from './src/About.jsx'
 import ProductFront from './src/ProductFront.jsx'
-import ProductApp
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import AdminRed from './src/reducers/reducers'
 
-ReactDOM.render(<BrowserRouter> 
+
+let store = createStore(AdminRed)
+
+ReactDOM.render(<Provider store={store}><BrowserRouter> 
     <div>
 
       <Header/>
@@ -46,5 +51,5 @@ ReactDOM.render(<BrowserRouter>
         
       </Switch>
     </div>
-  </BrowserRouter>, document.getElementById('root'));
+  </BrowserRouter></Provider>, document.getElementById('root'));
 registerServiceWorker();

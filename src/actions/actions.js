@@ -1,12 +1,26 @@
-export const  CREATE_PRODUCT='CREATE_PRODUCT'
-export const Pord={
-  ProductName:'',
-  Quantity:'',
+export const LOGIN_ADMIN='LOGIN_ADMIN'
+
+export function signInConfirmation(admin) {
+  return {
+    type: 'SIGNIN_CONFIRMATION',
+    admin
+  };
 }
-export function AddProduct(Prod)
-{
-     return{
-       type:CREATE_PRODUCT,
-       Prod
-     };
+export function signIn(admin) {
+  debugger;
+  if(user.username=="admin" && user.password=="admin")
+  {
+    debugger;
+      dispatch(signInConfirmation(admin))
+      console.log('success');
+      history.push('/AdminControls');
+  }
+  else
+  {
+    debugger;
+      history.push('/Login');
+      console.log('error');
+  }
 }
+    
+  
