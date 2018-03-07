@@ -14,26 +14,21 @@ class LoginUser extends React.Component {
          this.state={
              username:'',
              password:''
-             
-         }
+    }
          
     }  
    
    
-   GrabUser()
-   {
-    const obj={
-
-      username:this.props.username,
-      password:this.props.password
-    }
-   }
+  
    handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });  
   }
+  
    render() {
-      return (
 
+    const { dispatch } = this.props
+      return (
+        
 
         <div>
          <div className="container">
@@ -62,7 +57,7 @@ class LoginUser extends React.Component {
   
   <FormGroup>
     <Col smOffset={2} sm={10}>
-      <Button type="submit" bsStyle="info" onClick={User =>dispatch(signIn(this.GrabUser))}>Submit</Button>
+      <Button type="submit" bsStyle="info" onSubmit={() =>dispatch(signIn(this.state))}>Submit</Button>
       {this.state.msg3 && <HelpBlock>{this.state.msg3}</HelpBlock>}
     </Col>
   </FormGroup>
