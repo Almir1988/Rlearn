@@ -5,7 +5,7 @@ import {FormGroup,Col,Form,FormControl,Button,ControlLabel,HelpBlock} from 'reac
 import './LoginUser.css';
 import Footer from './Footer.jsx'
 import './Style.css'
-import { signIn } from './actions/actions'
+import {signIn} from './actions/actions'
 class LoginUser extends React.Component {
 
     constructor(props)
@@ -62,7 +62,7 @@ class LoginUser extends React.Component {
   
   <FormGroup>
     <Col smOffset={2} sm={10}>
-      <Button type="submit" bsStyle="info" onClick={obj=>dispatch(signIn(this.GrabUser))}>Submit</Button>
+      <Button type="submit" bsStyle="info" onClick={User =>dispatch(signIn(this.GrabUser))}>Submit</Button>
       {this.state.msg3 && <HelpBlock>{this.state.msg3}</HelpBlock>}
     </Col>
   </FormGroup>

@@ -2,7 +2,7 @@ export const LOGIN_ADMIN='LOGIN_ADMIN'
 
 export function signInConfirmation(admin) {
   return {
-    type: 'SIGNIN_CONFIRMATION',
+    type: 'LOGIN_ADMIN',
     admin
   };
 }
