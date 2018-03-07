@@ -8,7 +8,7 @@ export function signInConfirmation(admin) {
 }
 export function signIn(admin) {
   debugger;
-  if(user.username=="admin" && user.password=="admin")
+  if(admin.username=="admin" && admin.password=="admin")
   {
     debugger;
       dispatch(signInConfirmation(admin))
