@@ -12,7 +12,7 @@ class Header extends React.Component{
            <div>
              <Navbar   collapseOnSelect>
   <Navbar.Header>
-    <Navbar.Brand>
+    <Navbar.Brand componentClass="span">
       <Link className="login" to="/">
       WEBSITE
       </Link>
@@ -27,19 +27,19 @@ class Header extends React.Component{
       <Link  className="login" to="/Login">
        
       </Link>
-      </NavItem>
+      </NavItem >
       <Nav pullRight>
-      <NavItem eventKey={1} >
+      <NavItem eventKey={1}  >
       <Link  className="login"to="/Home">  
           Home
         </Link>
-      </NavItem>
-      <NavItem eventKey={2} >
+      </NavItem >
+      <NavItem eventKey={2}  >
       <Link  className="login"to="/About">  
           About
         </Link>
       </NavItem>
-      <NavItem eventKey={2} >
+      <NavItem eventKey={2}  >
       <Link  className="login"to="/Products">  
         Products
         </Link>
@@ -49,12 +49,12 @@ class Header extends React.Component{
           Contact
         </Link>
       </NavItem>
-      <NavItem eventKey={2} >
+      <NavItem eventKey={2}>
         <Button className="Navbtn"><Link  className=""to="/Login">  
           SIGN IN
         </Link></Button>
       </NavItem>
-      <NavItem eventKey={2} >
+      <NavItem eventKey={2}  >
         <Button className="Navbtn"><Link className=""to="/Registration">  
           SIGN UP
         </Link></Button>

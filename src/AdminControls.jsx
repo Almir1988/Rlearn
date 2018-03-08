@@ -6,19 +6,23 @@ import Imone  from './images/imone.png'
 import Imtwo from './images/imtwo.png'
 import Imtree from './images/imtree.png'
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux'
 import './Style.css'
 class Admincontrols extends React.Component{
 	render()
 	{
 		
+		
 		return(
 			<div className="container">
-
-
+     
     <Jumbotron>  
   <h2>ADMIN PANEL</h2>
+  <h4>Welcome {this.props.username}</h4>
+  <u1>
   <li><Link to='/User'>USERS</Link></li>
   <li><Link to='/Product'>PRODUCTS</Link></li>
+  </u1>
 </Jumbotron>
 			</div>
 		);
@@ -26,4 +30,4 @@ class Admincontrols extends React.Component{
 }
 
 
-export default Admincontrols;
+export default connect()(Admincontrols);

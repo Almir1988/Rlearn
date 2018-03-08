@@ -18,7 +18,7 @@ export function signIn(admin,history) {
     return dispatch=>{  
       dispatch(signInConfirmation(admin))
       console.log('success');
-      history.push('/AdminControls');
+      history.push('/AdminControls',{data:admin.username});
     };
   }
   else
