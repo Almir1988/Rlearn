@@ -6,21 +6,31 @@ export function signInConfirmation(admin) {
     admin
   };
 }
-export function signIn(admin) {
+export function signIn(admin,history) {
+  
+ 
+  console.log(admin.username);
+  console.log(admin.password);
+  console.log(admin);
   
   if(admin.username=== "admin" && admin.password=== "admin")
   {
-      console.log(admin)
+    
+    return dispatch=>{
+      
       dispatch(signInConfirmation(admin))
       console.log('success');
       //this.props.history.push('/AdminControls');
-     
+      history.push('/AdminControls');
+    };
   }
   else
   {
-   
-    //this.props.history.push('/Login');
-      console.log('error');
+    console.log(admin.username);
+    console.log(admin.password);
+    console.log('error');
+    history.push('/Login');
+    
   }
 }
     

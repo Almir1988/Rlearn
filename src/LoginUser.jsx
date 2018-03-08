@@ -28,8 +28,8 @@ class LoginUser extends React.Component {
    render() {
     
 
-    const { dispatch } = this.props
-   
+    const { dispatch} = this.props.history
+    
       return (
         
 

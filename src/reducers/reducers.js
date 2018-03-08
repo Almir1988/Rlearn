@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { LOGIN_ADMIN} from '../actions/actions'
+import {LOGIN_ADMIN} from '../actions/actions'
 
 function admins(state = [], action) {
    switch (action.type) {
