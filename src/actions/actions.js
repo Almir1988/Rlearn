@@ -20,7 +20,6 @@ export function signIn(admin,history) {
       
       dispatch(signInConfirmation(admin))
       console.log('success');
-      //this.props.history.push('/AdminControls');
       history.push('/AdminControls');
     };
   }

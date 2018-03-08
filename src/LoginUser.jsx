@@ -28,8 +28,8 @@ class LoginUser extends React.Component {
    render() {
     
 
-    const { dispatch} = this.props.history
-    
+    const { dispatch} = this.props
+    const {ownHistory}=this.props.history
       return (
         
 
@@ -60,7 +60,7 @@ class LoginUser extends React.Component {
   
   <FormGroup>
     <Col smOffset={2} sm={10}>
-      <Button bsStyle="info" onClick={() =>dispatch(signIn(this.state))}>Submit</Button>
+      <Button bsStyle="info" onClick={() =>dispatch(signIn(this.state,this.ownHistory))}>Submit</Button>
       {this.state.msg3 && <HelpBlock>{this.state.msg3}</HelpBlock>}
     </Col>
   </FormGroup>
