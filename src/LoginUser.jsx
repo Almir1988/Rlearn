@@ -6,8 +6,9 @@ import './LoginUser.css';
 import Footer from './Footer.jsx'
 import './Style.css'
 import {signIn} from './actions/actions'
-class LoginUser extends React.Component {
 
+class LoginUser extends React.Component {
+  
     constructor(props)
     {
          super(props);
@@ -25,8 +26,10 @@ class LoginUser extends React.Component {
   }
   
    render() {
+    
 
     const { dispatch } = this.props
+   
       return (
         
 
@@ -74,4 +77,4 @@ class LoginUser extends React.Component {
 }
 
 
-export default  connect()(withRouter(LoginUser));
+export default  withRouter(connect()(LoginUser));

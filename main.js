@@ -18,13 +18,15 @@ import ContactUs from './src/Contact.jsx'
 import AboutUs from './src/About.jsx'
 import ProductFront from './src/ProductFront.jsx'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
 import AdminRed from './src/reducers/reducers'
+import thunk from 'redux-thunk';
+
+import {createStore, applyMiddleware} from 'redux';
+
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 
-let store = createStore(AdminRed)
-
-ReactDOM.render(<Provider store={store}><BrowserRouter> 
+ReactDOM.render(<Provider store={createStoreWithMiddleware(AdminRed)}><BrowserRouter> 
     <div>
 
       <Header/>

@@ -7,18 +7,19 @@ export function signInConfirmation(admin) {
   };
 }
 export function signIn(admin) {
-  debugger;
-  if(admin.username=="admin" && admin.password=="admin")
+  
+  if(admin.username=== "admin" && admin.password=== "admin")
   {
-    debugger;
+      console.log(admin)
       dispatch(signInConfirmation(admin))
       console.log('success');
-      history.push('/AdminControls');
+      //this.props.history.push('/AdminControls');
+     
   }
   else
   {
-    debugger;
-      history.push('/Login');
+   
+    //this.props.history.push('/Login');
       console.log('error');
   }
 }
