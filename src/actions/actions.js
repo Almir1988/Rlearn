@@ -15,9 +15,7 @@ export function signIn(admin,history) {
   
   if(admin.username=== "admin" && admin.password=== "admin")
   {
-    
-    return dispatch=>{
-      
+    return dispatch=>{  
       dispatch(signInConfirmation(admin))
       console.log('success');
       history.push('/AdminControls');
@@ -25,11 +23,14 @@ export function signIn(admin,history) {
   }
   else
   {
+    return dispatch=>{
     console.log(admin.username);
     console.log(admin.password);
     console.log('error');
     history.push('/Login');
-    
+    admin.username='';
+    admin.password='';
+    };
   }
 }
     

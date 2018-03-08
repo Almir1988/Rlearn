@@ -10,6 +10,7 @@ import './Style.css'
 class Admincontrols extends React.Component{
 	render()
 	{
+		
 		return(
 			<div className="container">
 
@@ -23,5 +24,6 @@ class Admincontrols extends React.Component{
 		);
 	}
 }
+
 
 export default Admincontrols;
