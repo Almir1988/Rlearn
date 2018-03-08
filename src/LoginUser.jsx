@@ -18,9 +18,6 @@ class LoginUser extends React.Component {
     }
          
     }  
-   
-   
-  
    handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });  
   }
@@ -31,11 +28,9 @@ class LoginUser extends React.Component {
     const { dispatch} = this.props
   
       return (
-        
-
         <div>
          <div className="container">
-         <h1>Sign in</h1>
+         <h3>Sign in</h3>
            <Form  className="FormPosC"horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} sm={2}>
@@ -60,7 +55,7 @@ class LoginUser extends React.Component {
   
   <FormGroup>
     <Col smOffset={2} sm={10}>
-      <Button bsStyle="info" onClick={() =>dispatch(signIn(this.state,this.props.history))}>Submit</Button>
+      <Button  bsStyle="info" onClick={() =>dispatch(signIn(this.state,this.props.history))}>Submit</Button>
       {this.state.msg3 && <HelpBlock>{this.state.msg3}</HelpBlock>}
     </Col>
   </FormGroup>
@@ -76,5 +71,9 @@ class LoginUser extends React.Component {
    }
 }
 
+function mapStateToProps({admin}) {
+  return {admin};
+  
+}
 
-export default  withRouter(connect()(LoginUser));
+export default  withRouter(connect(mapStateToProps)(LoginUser));

@@ -11,12 +11,11 @@ import './Style.css'
 class Admincontrols extends React.Component{
 	render()
 	{
-		
-		
+		 
 		return(
 			<div className="container">
      
-    <Jumbotron>  
+    <Jumbotron >  
   <h2>ADMIN PANEL</h2>
   <h4>Welcome {this.props.username}</h4>
   <u1>
@@ -28,6 +27,5 @@ class Admincontrols extends React.Component{
 		);
 	}
 }
-
 
 export default connect()(Admincontrols);

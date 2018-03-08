@@ -66,9 +66,9 @@ class Registration extends React.Component {
   
 
               <div div className="container">
-              
+              <h3>Sign Up</h3> 
                <div className="RegisterPosMain">
-              <h3>SIGN UP</h3>
+             
                 <Form horizontal>
   <FormGroup controlId="FirstName" >
     <Col componentClass={ControlLabel} xs={2}>
