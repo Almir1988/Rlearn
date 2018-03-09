@@ -1,9 +1,10 @@
 import React from 'react';
 import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock,Grid} from 'react-bootstrap';
-import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
 import Footer from './Footer.jsx';
 import './Registration.css';
+import {SignUp} from './actions/actions'
+import { connect } from 'react-redux'
 class Registration extends React.Component {  
         constructor(props)
         {
@@ -17,50 +18,13 @@ class Registration extends React.Component {
           };
 
         }
-        Transfer () {
-          this.props.history.push("/");
-        }
-        Register() { 
-
-
-          if( this.state.FirstName== "" || this.state.LastName== "" || this.state.Email== "" || this.state.Password)
-          {
-            this.setState({
-              msg1:'Enter FirstName',
-              msg2:'Enter LastName',
-              msg3:'Enter Email',
-              msg4:'Enter Password'
-            });
-          }  
-
-
-
-          const tr=this.Transfer();
-        const body ={
-          FirstName:this.state.FirstName,
-          LastName:this.state.LastName,
-          Email:this.state.Email,
-          Password:this.state.Password
-        };
-        axios.post(`http://localhost:3000/User`, body)
-        .then(res =>this.setState({
-          msg:'Register successfully',
-          FirstName:'',
-          LastName:'',
-          Email:'',
-          Password:'',
-          tr
-        }))
-        .catch(err => {
-          msg:'Enter your information'
-          debugger;
-        });
-      }
       handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
       }
          render()
          {
+
+              const {dispatch}=this.props
              return(
 <div>
   
@@ -109,7 +73,8 @@ class Registration extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
    
-    <Button type="submit" className="AllButtons" bsStyle="info" onClick={this.Register.bind(this)} >Submit</Button>
+
+    <Button  className="AllButtons" bsStyle="info" onClick={() =>dispatch(SignUp(this.state,this.props.history))}>Submit</Button>
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
@@ -127,7 +92,7 @@ class Registration extends React.Component {
         }
 }
 
-export default withRouter(Registration);
+export default withRouter(connect()(Registration));
 
 
 

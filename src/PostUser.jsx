@@ -3,7 +3,8 @@ import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,co
 import Header from './Header.jsx';
 import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
-
+import {AddUser} from './actions/actions'
+import {connect} from 'react-redux'
 class PostUser extends React.Component {  
         constructor(props)
         {
@@ -19,36 +20,9 @@ class PostUser extends React.Component {
         }
 
 
-        Transfer () {
        
+
         
-      
-          this.props.history.push("/User");
-        }
-
-
-        AddUser() { 
-
-          const tr=this.Transfer();
-        const body ={
-          FirstName:this.state.FirstName,
-          LastName:this.state.LastName,
-          Email:this.state.Email,
-          Password:this.state.Password
-        };
-        axios.post(`http://localhost:3000/User`, body)
-        .then(res =>this.setState({
-          msg:'User added successfully',
-          FirstName:'',
-          LastName:'',
-          Email:'',
-          Password:'',
-          tr
-        }))
-        .catch(err => {
-          debugger;
-        });
-      }
       handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
       }
@@ -56,6 +30,8 @@ class PostUser extends React.Component {
       
          render()
          {
+
+          const {dispatch}=this.props
              return(
                 
               <div className="container">
@@ -105,7 +81,7 @@ class PostUser extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
    
-    <Button type="submit" bsStyle="info" onClick={this.AddUser.bind(this)} >Add User</Button>
+    <Button type="submit" bsStyle="info" onClick={() =>dispatch(AddUser(this.state,this.props.history))} >Add User</Button>
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
@@ -119,7 +95,7 @@ class PostUser extends React.Component {
          }
 }
 
-export default withRouter(PostUser);
+export default withRouter(connect()(PostUser));
 
 
 

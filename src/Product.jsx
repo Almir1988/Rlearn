@@ -19,7 +19,7 @@ class Product extends React.Component{
  <Jumbotron>  
   <h2>PRODUCTS</h2>
   <li><Link to='/PostProduct'>ADD PRODUCTS</Link></li>
-  <li> <Link to='/Products/ListOfAllProducts'>GET PRODUCTS</Link></li>
+  <li> <Link to='/Prod/ListOfAllProducts'>GET PRODUCTS</Link></li>
 </Jumbotron>
                
                  </div>

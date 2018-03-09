@@ -3,8 +3,8 @@ import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,co
 import Header from './Header.jsx';
 import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
-
-
+import { connect } from 'react-redux'
+import {AddProduct} from './actions/actions'
 class PostProducts extends React.Component {
 
 
@@ -12,46 +12,9 @@ class PostProducts extends React.Component {
       { 
             super(props);
             this.state={
-
-
               ProductName:'',
               Quantity:''
             }
-
-      }
-      
-
-
-
-      Transfer () {
-       
-        
-      
-        this.props.history.push("/Product");
-      }
-
-      AddProduct()
-      { 
-        const tr=this.Transfer();
-        const body ={
-
-          ProductName:this.state.ProductName,
-          Quantity:this.state.Quantity
-      };
-
-      
-      axios.post(`http://localhost:3000/Product`,body)
-      .then(res =>this.setState({
-        msg:'Product added successfully',
-        ProductName:'',
-        Quantity:'',
-        tr
-          
-      }))
-      .catch(err=>{
-
-        debugger;
-      })
       }
       handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
@@ -59,7 +22,7 @@ class PostProducts extends React.Component {
 
          render()
          {
-
+          const { dispatch} = this.props
              return(
                
               <div className="container">
@@ -93,19 +56,19 @@ class PostProducts extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
     
-    <Button type="submit" bsStyle="info" onClick={this.AddProduct.bind(this)}>Add Product</Button>
+    <Button type="submit" bsStyle="info" onClick={() =>dispatch(AddProduct(this.state,this.props.history))}>Add Product</Button>
     {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
 </Form>
 
 </div>
-             );
+);
 
-         }
+  }
 }
 
-export default withRouter(PostProducts);
+export default withRouter(connect()(PostProducts));
 
 
 

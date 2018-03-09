@@ -10,14 +10,14 @@ import Content from './src/Content.jsx'
 import PostUser from './src/PostUser.jsx'
 import PostProduct from './src/PostProduct.jsx'
 import ListOfAllUsers from './src/Users/ListOfAllUsers.jsx'
-import ListOfAllProducts from './src/Products/ListOfAllProducts.jsx'
+import ListOfAllProducts from './src/Prod/ListOfAllProducts.jsx'
 import LoginAdmin from './src/LoginUser.jsx'
 import AdminControls from './src/AdminControls.jsx'
 import UserRegistration from './src/Registration.jsx'
 import ContactUs from './src/Contact.jsx'
 import AboutUs from './src/About.jsx'
 import ProductFront from './src/ProductFront.jsx'
-import { Provider } from 'react-redux'
+import {Provider } from 'react-redux'
 import AdminRed from './src/reducers/reducers'
 import thunk from 'redux-thunk';
 
@@ -31,9 +31,9 @@ ReactDOM.render(<Provider store={createStoreWithMiddleware(AdminRed)}><BrowserRo
 
       <Header/>
       <Switch>
-
+        <Route path='/Prod/ListOfAllProducts' component={ListOfAllProducts}/>
         <Route path='/Products' component={ProductFront}/>
-       <Route path='/About' component={AboutUs}/>
+        <Route path='/About' component={AboutUs}/>
         <Route path='/Contact' component={ContactUs}/>
         <Route path='/Registration' component={UserRegistration}/> 
         <Route path='/Login' component={LoginAdmin}/>
@@ -46,7 +46,9 @@ ReactDOM.render(<Provider store={createStoreWithMiddleware(AdminRed)}><BrowserRo
          
         <Route path='/Product' component={Product}/>
         <Route path='/PostProduct' component={PostProduct}/>
-        <Route path='/Products/ListOfAllProducts' component={ListOfAllProducts}/>
+
+
+        
         
         <Route path='/' component={Content}/>
 

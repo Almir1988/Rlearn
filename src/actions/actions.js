@@ -1,7 +1,8 @@
 export const LOGIN_ADMIN='LOGIN_ADMIN'
-
-
-
+export const SIGN_UP='SIGN_UP'
+export const ADD_PRODUCT='ADD_PRODUCT'
+export const ADD_USER='ADD_USER'
+import axios from 'axios';
 export function signInConfirmation(admin) {
   return {
     type: 'LOGIN_ADMIN',
@@ -35,5 +36,71 @@ export function signIn(admin,history) {
     };
   }
 }
+export function signUpConfirmation(user) {
+  return {
+    type: 'SIGN_UP',
+    user
+  };
+}
+export function SignUp(user,history){
+
+  return dispatch => axios.post('http://localhost:3000/User', user)
+  .then((res) => {
+    dispatch(signUpConfirmation(res.data));
+    console.log('success')
+    history.push('/Home');
+  })
+  .catch(
     
-  
+    console.log('error'),
+    history.push('/Registration')
+   
+  );
+
+}
+export function AddProductConfirmation(product)
+{
+  return {
+    type: 'ADD_PRODUCT',
+    product
+  };
+}
+export function AddProduct(product,history){
+
+  return dispatch => axios.post('http://localhost:3000/Product', product)
+  .then((res) => {
+    dispatch(AddProductConfirmation(res.data));
+    console.log('success')
+    history.push('/Product');
+  })
+  .catch(
+    
+    console.log('error'),
+    history.push('/PostProduct')
+   
+  );
+
+}
+export function AddUserConfirmation(user)
+{
+  return {
+    type: 'ADD_USER',
+    user
+  };
+}
+export function AddUser(user,history){
+
+  return dispatch => axios.post('http://localhost:3000/User', user)
+  .then((res) => {
+    dispatch(AddUserConfirmation(res.data));
+    console.log('success')
+    history.push('/User');
+  })
+  .catch(
+    
+    console.log('error'),
+    history.push('/PostUser')
+   
+  );
+
+}
