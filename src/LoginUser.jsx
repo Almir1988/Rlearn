@@ -13,7 +13,8 @@ class LoginUser extends React.Component {
          super(props);
          this.state={
              username:'',
-             password:''
+             password:'',
+             
     }
          
     }  
@@ -21,16 +22,16 @@ class LoginUser extends React.Component {
     this.setState({ [e.target.name]: e.target.value });  
   }
   
-   render() {
+  render() {
     
 
-    const { dispatch} = this.props
+  const { dispatch} = this.props
   
-      return (
-        <div>
-         <div className="container">
-         <h3>Sign in</h3>
-           <Form  className="FormPosC"horizontal>
+    return (
+      <div>
+        <div className="container">
+        <h3>Sign in</h3>
+          <Form  className="FormPosC"horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} sm={2}>
     </Col>
@@ -54,7 +55,7 @@ class LoginUser extends React.Component {
   
   <FormGroup>
     <Col smOffset={2} sm={10}>
-      <Button  bsStyle="info" onClick={() =>dispatch(signIn(this.state,this.props.history))} >Submit</Button>
+      <Button  bsStyle="info" onClick={() =>dispatch(signIn(this.state,this.props.history))}>Submit</Button>
       {this.state.msg3 && <HelpBlock>{this.state.msg3}</HelpBlock>}
     </Col>
   </FormGroup>
@@ -68,8 +69,6 @@ class LoginUser extends React.Component {
    }
 }
 
-function mapStateToProps({username}) {
-  return {username};
-}
 
-export default  withRouter(connect(mapStateToProps)(LoginUser));
+
+export default  withRouter(connect()(LoginUser));

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux'
 import {Nav,Navbar,NavDropdown,NavItem,MenuItem,Button} from 'react-bootstrap';
 import './Header.css';
 
@@ -8,9 +9,13 @@ import './Header.css';
 class Header extends React.Component{
   render()
        {
+        const admin=this.props.admins.username;
+        const SignOut=this.props.admins
         return(
            <div>
-             <Navbar   collapseOnSelect>
+
+
+             <Navbar collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand componentClass="span">
       <Link className="login" to="/">
@@ -20,8 +25,7 @@ class Header extends React.Component{
     <Navbar.Toggle />
   </Navbar.Header>
   <Navbar.Collapse>
-    <Nav>
-    </Nav>
+  {!admin &&
     <Nav pullRight>
       <NavItem >
       <Link  className="login" to="/Login">
@@ -60,15 +64,53 @@ class Header extends React.Component{
         </Link></Button>
       </NavItem>
     </Nav>
-     
-    </Nav>
+    </Nav>  
+  }
+
+  {admin && 
+
+<Nav pullRight>
+<NavItem >
+</NavItem >
+<Nav pullRight>
+<NavItem eventKey={1}  >
+<Link  className="login"to="/Home">  
+    Home
+  </Link>
+</NavItem >
+<NavItem eventKey={2}  >
+<Link  className="login"to="/About">  
+    About
+  </Link>
+</NavItem>
+<NavItem eventKey={2}  >
+<Link  className="login"to="/Products">  
+  Products
+  </Link>
+</NavItem>
+<NavItem eventKey={2} >
+<Link  className="login"to="/Contact">  
+    Contact
+  </Link>
+</NavItem>
+<NavItem eventKey={2}>
+  <Button className="Navbtn" onClick={SignOut}><Link  className=""to="/Login">  
+    Logout
+  </Link></Button>
+</NavItem>
+</Nav>
+</Nav>  
+  }
+
   </Navbar.Collapse>
 </Navbar>
           </div>
-          
         );
        }
-
-
 }
-export default Header;
+
+
+function mapStateToProps({admins}) {
+  return {admins};
+}
+export default connect(mapStateToProps)(Header);

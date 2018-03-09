@@ -1,5 +1,7 @@
 export const LOGIN_ADMIN='LOGIN_ADMIN'
 
+
+
 export function signInConfirmation(admin) {
   return {
     type: 'LOGIN_ADMIN',

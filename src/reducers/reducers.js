@@ -6,12 +6,9 @@ import {LOGIN_ADMIN} from '../actions/actions'
 function admins(state = [], action) {
    switch (action.type) {
       case LOGIN_ADMIN:
-         return [
-            
-            ...state,
-            action.admin 
-         ]
-      default:
+         return action.admin
+              
+         default:
          return state
    }
 }

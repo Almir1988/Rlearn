@@ -8,18 +8,21 @@ import Imtree from './images/imtree.png'
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux'
 import './Style.css'
+import './Header.css'
 
 class Admincontrols extends React.Component{
 	render()
 	{
-     
-     
+
+    
+
+
 		return(
 			<div className="container">
-     
     <Jumbotron >  
   <h2>ADMIN PANEL</h2>
-  <h4>Welcome {this.props.username}  </h4>
+  <h4>Welcome {this.props.admins.username}  </h4>
+  
   <u1>
   <li><Link to='/User'>USERS</Link></li>
   <li><Link to='/Product'>PRODUCTS</Link></li>
@@ -29,6 +32,8 @@ class Admincontrols extends React.Component{
 		);
 	}
 }
+function mapStateToProps({admins}) {
+  return {admins};
+}
 
-
-export default (Admincontrols);
+export default connect(mapStateToProps)(Admincontrols);
