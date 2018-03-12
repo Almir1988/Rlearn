@@ -115,22 +115,23 @@ export function DeleteProductConfirmation(id)
   };
 
 }
-export function DeleteProduct(id)
+export function DeleteProduct(id,history)
 {
-
-  debugger;
+  
+  console.log(id)
+  
   return dispatch => axios.delete('http://localhost:3000/Product/'+id)
   .then((res) => {
-    debugger;
+    debugger;  
     dispatch(DeleteProductConfirmation(res.data));
     console.log('success')
     history.push('/ListOfAllProducts');
   })
-  .catch(
-    
+  .catch(()=>{
+    debugger;
     console.log('error'),
     history.push('/Product')
-   
+}
   );
 
 

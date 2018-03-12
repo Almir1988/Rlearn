@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../Header.jsx';
 import axios from 'axios';
+import {Link,withRouter} from "react-router-dom";
 import {Table,Button,Jumbotron,Modal} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+
 import {DeleteProduct} from '../actions/actions'
 import {connect} from 'react-redux'
+
 class Listofallproducts extends React.Component {
     
     constructor(props) {
@@ -24,15 +26,18 @@ class Listofallproducts extends React.Component {
      componentDidMount(){
          this.load();
     }
+    
     load() {
         axios.get(`http://localhost:3000/Product`).then(res => {
                this.setState({data: res.data})
             });
     }
+    
     render()
     {
 
         const {dispatch}=this.props
+        
          return (
              <div className="container">
            <Jumbotron>  
@@ -51,7 +56,7 @@ class Listofallproducts extends React.Component {
             </thead>
             <tbody>
                {this.state.data.map((product, i) => <TableRow key = {i} 
-                  data = {product} deleteProduct={(id) => dispatch(DeleteProduct(this.props.data._id))}/>)}
+                  data = {product} deleteProduct={(id) =>dispatch(DeleteProduct(id,this.props.history))}/>)}
             </tbody>
             </Table>
             </div>          
@@ -62,13 +67,14 @@ class TableRow extends React.Component {
     render() {
 
         const {dispatch}=this.props
+        
        return (
         
           <tr>
              <td>{this.props.data._id}</td>
              <td>{this.props.data.ProductName}</td>
              <td>{this.props.data.Quantity}</td>
-             <td><Button bsStyle="danger" onClick={() =>dispatch(DeleteProduct(this.props.data._id))}>Delete</Button></td>
+             <td><Button bsStyle="danger" onClick={() =>dispatch(DeleteProduct(this.props.data._id,this.props.history))}>Delete</Button></td>
              <td><Button bsStyle="success">Edit</Button></td>
              
           </tr>
@@ -78,4 +84,5 @@ class TableRow extends React.Component {
  }
 
  
- export default connect()(Listofallproducts);
+ 
+ export default withRouter(connect()(Listofallproducts));
