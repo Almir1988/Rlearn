@@ -75,7 +75,7 @@ export function AddProduct(product,history){
   .then((res) => {
     dispatch(AddProductConfirmation(res.data));
     console.log('success')
-    history.push('/Product');
+    history.push('/PostProduct');
   })
   .catch(
     
@@ -98,7 +98,7 @@ export function AddUser(user,history){
   .then((res) => {
     dispatch(AddUserConfirmation(res.data));
     console.log('success')
-    history.push('/User');
+    history.push('/Users/ListOfAllUsers');
   })
   .catch(
     
@@ -124,7 +124,7 @@ export function DeleteProduct(id,history)
   return dispatch => axios.delete('http://localhost:3000/Product/'+id)
   .then((res) => {
      
-    dispatch(DeleteProductConfirmation(res.data));
+    dispatch(DeleteProductConfirmation(id));
     console.log('success')
     
   })
@@ -134,8 +134,6 @@ export function DeleteProduct(id,history)
     history.push('/Product')
 }
   );
-
-
 }
 export function ShowProducts(prod)
 {
@@ -146,9 +144,9 @@ export function ShowProducts(prod)
 }
 export function ShowAllProducts()
 {
- debugger;
- return dispatch=> axios.get(`http://localhost:3000/Product`).then(res => {
  
+ return dispatch => axios.get(`http://localhost:3000/Product`).then(res => {
+               
                console.log(res.data);
                dispatch(ShowProducts(res.data));
               

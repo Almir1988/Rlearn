@@ -17,7 +17,7 @@ function user(state = [], action) {
             return state
 }}
    function products(state = [], action) {
-      debugger;
+
       switch (action.type) {
          case ADD_PRODUCT:
             return action.product

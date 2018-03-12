@@ -29,7 +29,7 @@ class Listofallproducts extends React.Component {
     
     load() {
        
-        ShowAllProducts();
+        this.props.dispatch(ShowAllProducts());
     }
     
     render()

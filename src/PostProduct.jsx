@@ -26,15 +26,9 @@ class PostProducts extends React.Component {
              return(
                
               <div className="container">
-
-
-
               <Jumbotron>  
                 <li><Link to='/Product'>RETURN TO PRODUCTS</Link></li>
               </Jumbotron>
-   
-   
-
 
                 <Form   horizontal>
   <FormGroup controlId="formHorizontalEmail">
