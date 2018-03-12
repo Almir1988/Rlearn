@@ -3,6 +3,7 @@ export const SIGN_UP='SIGN_UP'
 export const ADD_PRODUCT='ADD_PRODUCT'
 export const ADD_USER='ADD_USER'
 export const DELETE_PRODUCT='DELETE_PRODUCT'
+export const SHOW_PRODUCTS='SHOW_PRODUCTS'
 import axios from 'axios';
 export function signInConfirmation(admin) {
   return {
@@ -122,17 +123,33 @@ export function DeleteProduct(id,history)
   
   return dispatch => axios.delete('http://localhost:3000/Product/'+id)
   .then((res) => {
-    debugger;  
+     
     dispatch(DeleteProductConfirmation(res.data));
     console.log('success')
-    history.push('/ListOfAllProducts');
+    
   })
   .catch(()=>{
-    debugger;
+
     console.log('error'),
     history.push('/Product')
 }
   );
 
 
+}
+export function ShowProducts(prod)
+{
+  return {
+    type: 'SHOW_PRODUCTS',
+    prod
+  };
+}
+export function ShowAllProducts()
+{
+ 
+  axios.get(`http://localhost:3000/Product`).then(res => {
+ 
+               console.log(res.data);
+               ShowProducts(res.data);
+            });
 }

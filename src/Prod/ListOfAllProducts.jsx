@@ -4,7 +4,7 @@ import axios from 'axios';
 import {Link,withRouter} from "react-router-dom";
 import {Table,Button,Jumbotron,Modal} from 'react-bootstrap';
 
-import {DeleteProduct} from '../actions/actions'
+import {DeleteProduct ,ShowAllProducts} from '../actions/actions'
 import {connect} from 'react-redux'
 
 class Listofallproducts extends React.Component {
@@ -28,14 +28,13 @@ class Listofallproducts extends React.Component {
     }
     
     load() {
-        axios.get(`http://localhost:3000/Product`).then(res => {
-               this.setState({data: res.data})
-            });
+       
+        ShowAllProducts();
     }
     
     render()
     {
-
+        debugger;
         const {dispatch}=this.props
         
          return (
@@ -55,8 +54,9 @@ class Listofallproducts extends React.Component {
                  </tr>  
             </thead>
             <tbody>
-               {this.state.data.map((product, i) => <TableRow key = {i} 
-                  data = {product} deleteProduct={(id) =>dispatch(DeleteProduct(id,this.props.history))}/>)}
+  
+               {(this.props.products || []).map((product, i) => <TableRow key = {i} 
+                  data = {product} deleteProduct={(id) =>dispatch(DeleteProduct(product._id,this.props.history))}/>)}
             </tbody>
             </Table>
             </div>          
@@ -74,7 +74,7 @@ class TableRow extends React.Component {
              <td>{this.props.data._id}</td>
              <td>{this.props.data.ProductName}</td>
              <td>{this.props.data.Quantity}</td>
-             <td><Button bsStyle="danger" onClick={() =>dispatch(DeleteProduct(this.props.data._id,this.props.history))}>Delete</Button></td>
+             <td><Button bsStyle="danger" onClick={this.props.deleteProduct}>Delete</Button></td>
              <td><Button bsStyle="success">Edit</Button></td>
              
           </tr>
@@ -82,7 +82,8 @@ class TableRow extends React.Component {
        );
     }
  }
-
+ function mapStateToProps({products}) {
+    return {products};
+  }
  
- 
- export default withRouter(connect()(Listofallproducts));
+ export default connect(mapStateToProps)(Listofallproducts);
