@@ -34,7 +34,7 @@ class Listofallproducts extends React.Component {
     
     render()
     {
-        debugger;
+        
         const {dispatch}=this.props
         
          return (

@@ -146,10 +146,16 @@ export function ShowProducts(prod)
 }
 export function ShowAllProducts()
 {
- 
-  axios.get(`http://localhost:3000/Product`).then(res => {
+ debugger;
+ return dispatch=> axios.get(`http://localhost:3000/Product`).then(res => {
  
                console.log(res.data);
-               ShowProducts(res.data);
-            });
+               dispatch(ShowProducts(res.data));
+              
+            }).catch(()=>{
+
+              console.log('error')
+           
+          }
+            );
 }
