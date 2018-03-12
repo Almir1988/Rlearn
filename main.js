@@ -31,6 +31,8 @@ ReactDOM.render(<Provider store={createStoreWithMiddleware(AdminRed)}><BrowserRo
 
       <Header/>
       <Switch>
+
+        
         <Route path='/Prod/ListOfAllProducts' component={ListOfAllProducts}/>
         <Route path='/Products' component={ProductFront}/>
         <Route path='/About' component={AboutUs}/>
@@ -42,11 +44,11 @@ ReactDOM.render(<Provider store={createStoreWithMiddleware(AdminRed)}><BrowserRo
         <Route path='/User' component={User}/>
         <Route path='/PostUser' component={PostUser}/>
         <Route path='/Users/ListOfAllUsers' component={ListOfAllUsers}/>
-
-         
+        
         <Route path='/Product' component={Product}/>
         <Route path='/PostProduct' component={PostProduct}/>
-
+        
+        
 
         
         

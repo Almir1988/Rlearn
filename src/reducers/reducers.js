@@ -20,7 +20,11 @@ function user(state = [], action) {
 
       switch (action.type) {
          case ADD_PRODUCT:
-            return action.product
+            return [
+                  ...state,
+            action.product
+
+            ]
          case DELETE_PRODUCT:
           return state.filter(product => product._id !== action.id)
           case SHOW_PRODUCTS:

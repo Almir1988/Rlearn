@@ -5,7 +5,7 @@ import {Nav,Navbar,NavDropdown,NavItem,MenuItem,Jumbotron,Button,FormGroup,Form,
 import './Style.css';
 import Footer from './Footer.jsx'
 import './Contact.css'
-
+import SimpleMap from './map.jsx'
 class Contact  extends React.Component{ 
 
        render()
@@ -70,7 +70,7 @@ first.last@example.com</p>
 </Row>
 </Grid>
           </div>
-          
+          <SimpleMap/>
               <Footer/>
               
               </div>

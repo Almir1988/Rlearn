@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form,FormGroup,Button,Jumbotron,Col,Checkbox,ControlLabel,FormControl,controlId,componentClass,HelpBlock} from 'react-bootstrap';
-import Header from './Header.jsx';
+
 import axios from 'axios';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux'
@@ -50,7 +50,7 @@ class PostProducts extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
     
-    <Button type="submit" bsStyle="info" onClick={() =>dispatch(AddProduct(this.state,this.props.history))}>Add Product</Button>
+    <Button  bsStyle="info" onClick={() =>dispatch(AddProduct(this.state,this.props.history))}>Add Product</Button>
     {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>

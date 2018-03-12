@@ -71,19 +71,20 @@ export function AddProductConfirmation(product)
 }
 export function AddProduct(product,history){
 
-  return dispatch => axios.post('http://localhost:3000/Product', product)
+ return dispatch => axios.post('http://localhost:3000/Product', product)
   .then((res) => {
+   
+    console.log(res.data);
     dispatch(AddProductConfirmation(res.data));
     console.log('success')
-    history.push('/PostProduct');
-  })
-  .catch(
+    history.push('/Prod/ListOfAllProducts');
     
+  }).catch(()=>{
+  
     console.log('error'),
     history.push('/PostProduct')
-   
+}
   );
-
 }
 export function AddUserConfirmation(user)
 {
@@ -93,14 +94,12 @@ export function AddUserConfirmation(user)
   };
 }
 export function AddUser(user,history){
-
   return dispatch => axios.post('http://localhost:3000/User', user)
   .then((res) => {
     dispatch(AddUserConfirmation(res.data));
     console.log('success')
     history.push('/Users/ListOfAllUsers');
-  })
-  .catch(
+  }).catch(
     
     console.log('error'),
     history.push('/PostUser')
