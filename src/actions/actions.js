@@ -2,6 +2,7 @@ export const LOGIN_ADMIN='LOGIN_ADMIN'
 export const SIGN_UP='SIGN_UP'
 export const ADD_PRODUCT='ADD_PRODUCT'
 export const ADD_USER='ADD_USER'
+export const DELETE_PRODUCT='DELETE_PRODUCT'
 import axios from 'axios';
 export function signInConfirmation(admin) {
   return {
@@ -43,7 +44,9 @@ export function signUpConfirmation(user) {
   };
 }
 export function SignUp(user,history){
+  
 
+  
   return dispatch => axios.post('http://localhost:3000/User', user)
   .then((res) => {
     dispatch(signUpConfirmation(res.data));
@@ -102,5 +105,33 @@ export function AddUser(user,history){
     history.push('/PostUser')
    
   );
+
+}
+export function DeleteProductConfirmation(id)
+{
+  return {
+    type: 'DELETE_PRODUCT',
+    id
+  };
+
+}
+export function DeleteProduct(id)
+{
+
+  debugger;
+  return dispatch => axios.delete('http://localhost:3000/Product/'+id)
+  .then((res) => {
+    debugger;
+    dispatch(DeleteProductConfirmation(res.data));
+    console.log('success')
+    history.push('/ListOfAllProducts');
+  })
+  .catch(
+    
+    console.log('error'),
+    history.push('/Product')
+   
+  );
+
 
 }

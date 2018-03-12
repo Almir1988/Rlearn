@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import {LOGIN_ADMIN,SIGN_UP,ADD_PRODUCT,ADD_USER} from '../actions/actions'
+import {LOGIN_ADMIN,SIGN_UP,ADD_PRODUCT,ADD_USER,DELETE_PRODUCT} from '../actions/actions'
 function admins(state = [], action) {
    switch (action.type) {
       case LOGIN_ADMIN:
@@ -35,11 +35,20 @@ function user(state = [], action) {
             return state
       }
    }
+   function deleteProducts(state = [], action) {
+      switch (action.type) {
+         case DELETE_PRODUCT:
+            return action.id
+            default:
+            return state
+      }
+   }
 const AdminRed = combineReducers({
       admins,
       user,
       products,
-      users
+      users,
+      deleteProducts
 })
 
 export default (AdminRed)
