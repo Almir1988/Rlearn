@@ -4,7 +4,11 @@ export const ADD_PRODUCT='ADD_PRODUCT'
 export const ADD_USER='ADD_USER'
 export const DELETE_PRODUCT='DELETE_PRODUCT'
 export const SHOW_PRODUCTS='SHOW_PRODUCTS'
+export const SHOW_USERS='SHOW_USERS'
+export const DELETE_USER='DELETE_USER'
 import axios from 'axios';
+
+//ADMIN ACTIONS 
 export function signInConfirmation(admin) {
   return {
     type: 'LOGIN_ADMIN',
@@ -38,30 +42,8 @@ export function signIn(admin,history) {
     };
   }
 }
-export function signUpConfirmation(user) {
-  return {
-    type: 'SIGN_UP',
-    user
-  };
-}
-export function SignUp(user,history){
-  
 
-  
-  return dispatch => axios.post('http://localhost:3000/User', user)
-  .then((res) => {
-    dispatch(signUpConfirmation(res.data));
-    console.log('success')
-    history.push('/Home');
-  })
-  .catch(
-    
-    console.log('error'),
-    history.push('/Registration')
-   
-  );
-
-}
+//PRODUCT ACTIONS
 export function AddProductConfirmation(product)
 {
   return {
@@ -71,7 +53,7 @@ export function AddProductConfirmation(product)
 }
 export function AddProduct(product,history){
 
- return dispatch => axios.post('http://localhost:3000/Product', product)
+ return dispatch => axios.post('http://localhost:3000/Product',product)
   .then((res) => {
    
     console.log(res.data);
@@ -85,27 +67,6 @@ export function AddProduct(product,history){
     history.push('/PostProduct')
 }
   );
-}
-export function AddUserConfirmation(user)
-{
-  return {
-    type: 'ADD_USER',
-    user
-  };
-}
-export function AddUser(user,history){
-  return dispatch => axios.post('http://localhost:3000/User', user)
-  .then((res) => {
-    dispatch(AddUserConfirmation(res.data));
-    console.log('success')
-    history.push('/Users/ListOfAllUsers');
-  }).catch(
-    
-    console.log('error'),
-    history.push('/PostUser')
-   
-  );
-
 }
 export function DeleteProductConfirmation(id)
 {
@@ -122,13 +83,10 @@ export function DeleteProduct(id,history)
   
   return dispatch => axios.delete('http://localhost:3000/Product/'+id)
   .then((res) => {
-     
     dispatch(DeleteProductConfirmation(id));
     console.log('success')
-    
   })
   .catch(()=>{
-
     console.log('error'),
     history.push('/Product')
 }
@@ -155,4 +113,99 @@ export function ShowAllProducts()
            
           }
             );
+}
+//USER ACTIONS 
+export function AddUserConfirmation(user)
+{
+  return {
+    type: 'ADD_USER',
+    user
+  };
+}
+export function AddUser(user,history){
+
+
+  return dispatch => axios.post('http://localhost:3000/User', user)
+  .then((res) => {
+    dispatch(AddUserConfirmation(res.data));
+    console.log('success')
+  
+    history.push('/Users/ListOfAllUsers');
+  }).catch(()=>{
+  
+    console.log('error'),
+    history.push('/PostUser')
+}
+  );
+
+}
+export function ShowUser(use)
+{
+  return {
+    type: 'SHOW_USERS',
+    use
+  };
+}
+export function ShowAllUsers()
+{
+  return dispatch => axios.get(`http://localhost:3000/User`).then(res => {
+               
+    console.log(res.data);
+    dispatch(ShowUser(res.data));
+    
+ }).catch(()=>{
+
+   console.log('error')
+
+}
+ );
+}
+export function DeleteUserConfirmation(id)
+{
+  return {
+    type: 'DELETE_USER',
+    id
+  };
+}
+export function DeleteUser(id,history)
+{
+
+  console.log(id)  
+   
+  return dispatch => axios.delete('http://localhost:3000/User/'+id)
+  .then((res) => {
+    dispatch(DeleteUserConfirmation(id));
+    console.log('success')
+    
+  })
+  .catch(()=>{
+    debugger;
+    console.log('error'),
+    history.push('/User')
+}
+  );
+}
+export function signUpConfirmation(admin) {
+  return {
+    type: 'SIGN_UP',
+    admin
+  };
+}
+export function SignUp(admin,history){
+  
+
+  
+  return dispatch => axios.post('http://localhost:3000/User', admin)
+  .then((res) => {
+    dispatch(signUpConfirmation(res.data));
+    console.log('success')
+    history.push('/Home');
+  })
+  .catch(
+    
+    console.log('error'),
+    history.push('/Registration')
+   
+  );
+
 }

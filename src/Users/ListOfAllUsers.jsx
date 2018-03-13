@@ -3,12 +3,16 @@ import Header from '../Header.jsx';
 import axios from 'axios';
 import {Table,Button,Jumbotron} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {DeleteUser,ShowAllUsers} from '../actions/actions'
+import {connect} from 'react-redux'
+
+
+
 class Listofallusers extends React.Component {
     
     constructor(props) {
         super(props);
          this.state={
-
             data:[
                 {
             _id:'',
@@ -25,18 +29,11 @@ class Listofallusers extends React.Component {
     }
     load()
     {
-        axios.get(`http://localhost:3000/User`).then(res => {
-               this.setState({data: res.data})
-            });
+        this.props.dispatch(ShowAllUsers());
     }
-     deleteUser(id)
-     {
-
-        axios.delete('http://localhost:3000/User/'+id).then(()=>this.load())
-     }
-
     render()
     {
+         const {dispatch}=this.props
          return (
         
             
@@ -61,8 +58,8 @@ class Listofallusers extends React.Component {
                  </tr>  
             </thead>
             <tbody>
-               {this.state.data.map((person, i) => <TableRow key = {i} 
-                  data = {person} deleteUser={(id) => this.deleteUser(id)}/>)}
+               {(this.props.users || []).map((person, i) => <TableRow key = {i} 
+                  data = {person} deleteUser={(id) =>dispatch(DeleteUser(person._id,this.props.history))}/>)}
             </tbody>
             </Table>
 
@@ -73,6 +70,7 @@ class Listofallusers extends React.Component {
 }
 class TableRow extends React.Component {
     render() {
+        const {dispatch}=this.props
        return (
         
           <tr>
@@ -81,7 +79,7 @@ class TableRow extends React.Component {
              <td>{this.props.data.LastName}</td>
              <td>{this.props.data.Email}</td>
              <td>{this.props.data.Password}</td>
-             <td><Button bsStyle="danger" onClick={() => this.props.deleteUser(this.props.data._id)}>Delete</Button></td>
+             <td><Button bsStyle="danger" onClick={this.props.deleteUser}>Delete</Button></td>
              <td><Button bsStyle="success">Edit</Button></td>
           </tr>
           
@@ -89,4 +87,8 @@ class TableRow extends React.Component {
     }
  }
 
- export default Listofallusers;
+ function mapStateToProps({users}) {
+    return {users};
+  }
+
+ export default connect(mapStateToProps)(Listofallusers);

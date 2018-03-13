@@ -8,17 +8,14 @@ import {DeleteProduct ,ShowAllProducts} from '../actions/actions'
 import {connect} from 'react-redux'
 
 class Listofallproducts extends React.Component {
-    
     constructor(props) {
         super(props);
          this.state={
-
             data:[
                 {
                     _id:'',
                     ProductName:'',
                     Quantity:''
-           
                 }
             ]
          }

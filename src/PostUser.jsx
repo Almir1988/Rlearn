@@ -9,19 +9,12 @@ class PostUser extends React.Component {
         {
           super(props);
           this.state= {
-
             FirstName:'',
             LastName:'',
             Email:'',
             Password:''
           };
-
-        }
-
-
-       
-
-        
+        }        
       handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
       }
@@ -80,7 +73,7 @@ class PostUser extends React.Component {
   <FormGroup>
     <Col smOffset={2} xs={10}>
    
-    <Button  bsStyle="info" onClick={() =>dispatch(AddUser(this.state,this.props.history))} >Add User</Button>
+    <Button  bsStyle="info" onClick={() =>dispatch(AddUser(this.state,this.props.history))}>Add User</Button>
       {this.state.msg && <HelpBlock>{this.state.msg}</HelpBlock>}
     </Col>
   </FormGroup>
